@@ -1,6 +1,6 @@
 {% extends "home/base.html" %}
 {% comment %} {% block title}home{% endblock title %} {% endcomment %}
-
+{% load static %}
 
 {% block stylesheets %}{% endblock stylesheets %}
 
@@ -34,7 +34,7 @@
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-6">
                     <div class="header-content-image text-center">
-                        <img src="excain/static/images/index-3-header/header-3-shape.png" alt="header">
+                        <img src="{% static '/images/index-3-header/header-3-shape.png' %}" alt="header">
                     </div>
                 </div>
             </div>
@@ -45,22 +45,22 @@
     <div class="about-section bg-off-white pt-100 pb-70 position-relative overflow-hidden">
         <div class="background-shapes">
             <div class="background-shape-item">
-                <img src="excain/static/images/shapes/curved-line.png" alt="line">
+                <img src="{% static '/images/shapes/curved-line.png' %}" alt="line">
             </div>
             <div class="background-shape-item">
-                <img src="excain/static/images/shapes/half-circle-shape.png" alt="line">
+                <img src="{% static '/images/shapes/half-circle-shape.png' %}" alt="line">
             </div>
         </div>
         <div class="animate-shapes">
             <div class="animate-shape animation-tab-none">
-                <img src="excain/static/images/shapes/animate-shape-3.png" alt="shape">
+                <img src="{% static '/images/shapes/animate-shape-3.png' %}" alt="shape">
             </div>
         </div>
         <div class="container">
             <div class="row">
                 <div class="col-12 col-sm-6 col-lg-3 pb-30">
                     <div class="about-item-card about-item-card-thirdcolor">
-                        <img src="excain/static/images/shapes/about-grid-icon.png" class="about-card-image" alt="icon">
+                        <img src="{% static '/images/shapes/about-grid-icon.png' %}" class="about-card-image" alt="icon">
                         <div class="about-card-icon">
                             <i class="flaticon-book-of-black-cover-closed"></i>
                             <i class="flaticon-mortarboard"></i>
@@ -73,7 +73,7 @@
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3 pb-30">
                     <div class="about-item-card about-item-card-thirdcolor">
-                        <img src="excain/static/images/shapes/about-grid-icon.png" class="about-card-image" alt="icon">
+                        <img src="{% static '/images/shapes/about-grid-icon.png' %}" class="about-card-image" alt="icon">
                         <div class="about-card-icon">
                             <i class="flaticon-laptop"></i>
                             <i class="flaticon-web"></i>
@@ -86,7 +86,7 @@
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3 pb-30">
                     <div class="about-item-card about-item-card-thirdcolor">
-                        <img src="excain/static/images/shapes/about-grid-icon.png" class="about-card-image" alt="icon">
+                        <img src="{% static '/images/shapes/about-grid-icon.png' %}" class="about-card-image" alt="icon">
                         <div class="about-card-icon">
                             <i class="flaticon-pencil"></i>
                             <i class="flaticon-agenda"></i>
@@ -99,7 +99,7 @@
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3 pb-30">
                     <div class="about-item-card about-item-card-thirdcolor">
-                        <img src="excain/static/images/shapes/about-grid-icon.png" class="about-card-image" alt="icon">
+                        <img src="{% static '/images/shapes/about-grid-icon.png' %}" class="about-card-image" alt="icon">
                         <div class="about-card-icon">
                             <i class="flaticon-monitor"></i>
                             <i class="flaticon-address-book"></i>
@@ -158,7 +158,7 @@
                 <div class="col-12 col-lg-6 pb-30">
                     <div class="course-card course-card-list course-card-thirdcolor">
                         <div class="course-card-thumb course-card-thumb-thirdcolor">
-                            <a href="single-course.html"><img src="excain/static/images/shapes/course-shape-1.png"
+                            <a href="single-course.html"><img src="{% static '/images/shapes/course-shape-1.png' %}"
                                     alt="course"></a>
                         </div>
                         <div class="course-card-content">
@@ -179,7 +179,7 @@
                 <div class="col-12 col-lg-6 pb-30">
                     <div class="course-card course-card-list course-card-thirdcolor">
                         <div class="course-card-thumb course-card-thumb-violet">
-                            <a href="single-course.html"><img src="excain/static/images/shapes/course-shape-2.png"
+                            <a href="single-course.html"><img src="{% static '/images/shapes/course-shape-2.png' %}"
                                     alt="course"></a>
                         </div>
                         <div class="course-card-content">
@@ -199,7 +199,7 @@
                 <div class="col-12 col-lg-6 pb-30">
                     <div class="course-card course-card-list course-card-thirdcolor">
                         <div class="course-card-thumb course-card-thumb-skyblue">
-                            <a href="single-course.html"><img src="excain/static/images/shapes/course-shape-3.png"
+                            <a href="single-course.html"><img src="{% static '/images/shapes/course-shape-3.png' %}"
                                     alt="course"></a>
                         </div>
                         <div class="course-card-content">
@@ -220,7 +220,7 @@
                 <div class="col-12 col-lg-6 pb-30">
                     <div class="course-card course-card-list course-card-thirdcolor">
                         <div class="course-card-thumb course-card-thumb-yellow">
-                            <a href="single-course.html"><img src="excain/static/images/shapes/course-shape-4.png"
+                            <a href="single-course.html"><img src="{% static '/images/shapes/course-shape-4.png' %}"
                                     alt="course"></a>
                         </div>
                         <div class="course-card-content">
@@ -239,7 +239,7 @@
                 <div class="col-12 col-lg-6 pb-30">
                     <div class="course-card course-card-list course-card-thirdcolor">
                         <div class="course-card-thumb course-card-thumb-purple">
-                            <a href="single-course.html"><img src="excain/static/images/shapes/course-shape-5.png"
+                            <a href="single-course.html"><img src="{% static '/images/shapes/course-shape-5.png' %}"
                                     alt="course"></a>
                         </div>
                         <div class="course-card-content">
@@ -259,7 +259,7 @@
                 <div class="col-12 col-lg-6 pb-30">
                     <div class="course-card course-card-list course-card-thirdcolor">
                         <div class="course-card-thumb course-card-thumb-blue">
-                            <a href="single-course.html"><img src="excain/static/images/shapes/course-shape-6.png"
+                            <a href="single-course.html"><img src="{% static '/images/shapes/course-shape-6.png' %}"
                                     alt="course"></a>
                         </div>
                         <div class="course-card-content">
@@ -309,7 +309,7 @@
                     <div class="offer-card offer-card-thirdcolor">
                         <div class="offer-card-inner">
                             <div class="offer-card-thumb">
-                                <img src="excain/static/images/shapes/offer-shape-1.png" alt="shape">
+                                <img src="{% static '/images/shapes/offer-shape-1.png' %}" alt="shape">
                             </div>
                             <div class="offer-card-content">
                                 <h3>Business Studies</h3>
@@ -323,7 +323,7 @@
                     <div class="offer-card offer-card-thirdcolor">
                         <div class="offer-card-inner">
                             <div class="offer-card-thumb">
-                                <img src="excain/static/images/shapes/offer-shape-2.png" alt="shape">
+                                <img src="{% static '/images/shapes/offer-shape-2.png' %}" alt="shape">
                             </div>
                             <div class="offer-card-content">
                                 <h3>Web Development</h3>
@@ -337,7 +337,7 @@
                     <div class="offer-card offer-card-thirdcolor">
                         <div class="offer-card-inner">
                             <div class="offer-card-thumb">
-                                <img src="excain/static/images/shapes/offer-shape-3.png" alt="shape">
+                                <img src="{% static '/images/shapes/offer-shape-3.png' %}" alt="shape">
                             </div>
                             <div class="offer-card-content">
                                 <h3>Idea Discussion</h3>
@@ -351,8 +351,53 @@
                 <div class="col-12 col-sm-6 col-lg-3 pb-30">
                     <div class="offer-card offer-card-thirdcolor">
                         <div class="offer-card-inner">
-                            <div class="offer-card-thumb">
-                                <img src="excain/static/images/shapes/offer-shape-4.png" alt="shape">
+                            <div class
+                            <script data-cfasync="false"
+                                src="https://templates.hibootstrap.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+                            <script src="assets/js/jquery-3.5.1.min.js"></script>
+                            <script src="assets/js/bootstrap.bundle.min.js"></script>
+                        
+                            <script src="assets/js/jquery.magnific-popup.min.js"></script>
+                        
+                            <script src="assets/js/swiper-bundle.min.js"></script>
+                        
+                            <script src="assets/js/jquery.waypoints.min.js"></script>
+                            <script src="assets/js/jquery.counterup.min.js"></script>
+                        
+                            <script src="assets/js/moment.js"></script>
+                            <script src="assets/js/main.min.js"></script>
+                            <script src="assets/js/jquery-ui.js"></script>
+                        
+                            <script src="assets/js/isotope.pkgd.min.js"></script>
+                        
+                            <script src="assets/js/jquery.themepunch.revolution.min.js"></script>
+                            <script src="assets/js/jquery.themepunch.tools.min.js"></script>
+                        
+                            <script src="assets/js/extensions/revolution.extension.actions.min.js"></script>
+                            <script src="assets/js/extensions/revolution.extension.carousel.min.js"></script>
+                            <script src="assets/js/extensions/revolution.extension.kenburn.min.js"></script>
+                            <script src="assets/js/extensions/revolution.extension.layeranimation.min.js"></script>
+                            <script src="assets/js/extensions/revolution.extension.migration.min.js"></script>
+                            <script src="assets/js/extensions/revolution.extension.navigation.min.js"></script>
+                            <script src="assets/js/extensions/revolution.extension.parallax.min.js"></script>
+                            <script src="assets/js/extensions/revolution.extension.slideanims.min.js"></script>
+                            <script src="assets/js/extensions/revolution.extension.video.min.js"></script>
+                        
+                            <script src="assets/js/jquery.ajaxchimp.min.js"></script>
+                        
+                            <script src="assets/js/form-validator.min.js"></script>
+                        
+                            <script src="assets/js/contact-form-script.js"></script>
+                        
+                            <script src="assets/js/jquery.meanmenu.min.js"></script>
+                        
+                            <script src="assets/js/script.js"></script>
+                            </body>
+                        
+                            <!-- Mirrored from templates.hibootstrap.com/jexi/default/contact-us.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 06 Jan 2022 18:24:37 GMT -->
+                        
+                            </html>="offer-card-thumb">
+                                <img src="{% static '/images/shapes/offer-shape-4.png' %}" alt="shape">
                             </div>
                             <div class="offer-card-content">
                                 <h3>Graphic Design</h3>
@@ -373,15 +418,15 @@
             <div class="video-bg pt-100 bg-off-white">
                 <div class="video-bg-shapes">
                     <div class="video-bg-shape-item">
-                        <img src="excain/static/images/shapes/line-area-shape.png" alt="shape">
+                        <img src="{% static '/images/shapes/line-area-shape.png' %}" alt="shape">
                     </div>
                 </div>
                 <div class="video-animation-items">
                     <div class="video-animation-item animation-tab-none">
-                        <img src="excain/static/images/shapes/abstract-shape-1.png" alt="shape">
+                        <img src="{% static '/images/shapes/abstract-shape-1.png' %}" alt="shape">
                     </div>
                     <div class="video-animation-item animation-tab-none">
-                        <img src="excain/static/images/shapes/abstract-shape-2.png" alt="shape">
+                        <img src="{% static '/images/shapes/abstract-shape-2.png' %}" alt="shape">
                     </div>
                 </div>
                 <div class="section-title section-title-shapeless section-title-lineless section-title-thirdcolor">
@@ -389,14 +434,14 @@
                 </div>
             </div>
             <div class="video-content">
-                <img src="excain/static/images/videos-bg/video-image-2.jpg" alt="vide">
+                <img src="{% static '/images/videos-bg/video-image-2.jpg' %}" alt="vide">
                 <div class="video-button video-button-thirdcolor">
                     <a href="https://www.youtube.com/watch?v=BRvyWfuxGuU" id="video-popup"><i
                             class="flaticon-play-button"></i></a>
                 </div>
                 <div class="content-animation-shapes">
                     <div class="content-animation-shape animation-tab-none">
-                        <img src="excain/static/images/shapes/combined-circle-shape.png" alt="shape">
+                        <img src="{% static '/images/shapes/combined-circle-shape.png' %}" alt="shape">
                     </div>
                 </div>
             </div>
@@ -427,7 +472,7 @@
                         <div class="testimonial-carousel-header">
                             <div class="testimonial-header-text font-family-3">Reliable</div>
                             <div class="testimonial-header-thumb">
-                                <img src="excain/static/images/clients/client-1.jpg" alt="client">
+                                <img src="{% static '/images/clients/client-1.jpg' %}" alt="client">
                             </div>
                         </div>
                         <div class="testimonial-carousel-content-two">
@@ -441,7 +486,7 @@
                         <div class="testimonial-carousel-header">
                             <div class="testimonial-header-text font-family-3">Awesome</div>
                             <div class="testimonial-header-thumb">
-                                <img src="excain/static/images/clients/client-2.jpg" alt="client">
+                                <img src="{% static '/images/clients/client-2.jpg' %}" alt="client">
                             </div>
                         </div>
                         <div class="testimonial-carousel-content-two">
@@ -455,7 +500,7 @@
                         <div class="testimonial-carousel-header">
                             <div class="testimonial-header-text font-family-3">Perfect</div>
                             <div class="testimonial-header-thumb">
-                                <img src="excain/static/images/clients/client-3.jpg" alt="client">
+                                <img src="{% static '/images/clients/client-3.jpg' %}" alt="client">
                             </div>
                         </div>
                         <div class="testimonial-carousel-content-two">
@@ -480,25 +525,25 @@
             <div class="partner-carousel swiper-container">
                 <div class="swiper-wrapper">
                     <div class="partner-item swiper-slide">
-                        <a href="#"><img src="excain/static/images/partners/partner-1.png" alt="partner"></a>
+                        <a href="#"><img src="{% static '/images/partners/partner-1.png' %}" alt="partner"></a>
                     </div>
                     <div class="partner-item swiper-slide">
-                        <a href="#"><img src="excain/static/images/partners/partner-2.png" alt="partner"></a>
+                        <a href="#"><img src="{% static '/images/partners/partner-2.png' %}" alt="partner"></a>
                     </div>
                     <div class="partner-item swiper-slide">
-                        <a href="#"><img src="excain/static/images/partners/partner-3.png" alt="partner"></a>
+                        <a href="#"><img src="{% static '/images/partners/partner-3.png' %}" alt="partner"></a>
                     </div>
                     <div class="partner-item swiper-slide">
-                        <a href="#"><img src="excain/static/images/partners/partner-4.png" alt="partner"></a>
+                        <a href="#"><img src="{% static '/images/partners/partner-4.png' %}" alt="partner"></a>
                     </div>
                     <div class="partner-item swiper-slide">
-                        <a href="#"><img src="excain/static/images/partners/partner-5.png" alt="partner"></a>
+                        <a href="#"><img src="{% static '/images/partners/partner-5.png' %}" alt="partner"></a>
                     </div>
                     <div class="partner-item swiper-slide">
-                        <a href="#"><img src="excain/static/images/partners/partner-6.png" alt="partner"></a>
+                        <a href="#"><img src="{% static '/images/partners/partner-6.png' %}" alt="partner"></a>
                     </div>
                     <div class="partner-item swiper-slide">
-                        <a href="#"><img src="excain/static/images/partners/partner-7.png" alt="partner"></a>
+                        <a href="#"><img src="{% static '/images/partners/partner-7.png' %}" alt="partner"></a>
                     </div>
                 </div>
             </div>
@@ -519,7 +564,7 @@
                 <div class="col-12 col-md-6 col-lg-4 pb-30">
                     <div class="course-flat-card course-flat-card-thirdcolor">
                         <div class="course-card-thumb">
-                            <a href="single-blog.html"><img src="excain/static/images/events/event-course-1.jpg"
+                            <a href="single-blog.html"><img src="{% static '/images/events/event-course-1.jpg' %}"
                                     alt="course"></a>
                         </div>
                         <div class="course-card-content">
@@ -539,7 +584,7 @@
                 <div class="col-12 col-md-6 col-lg-4 pb-30">
                     <div class="course-flat-card course-flat-card-thirdcolor">
                         <div class="course-card-thumb">
-                            <a href="single-blog.html"><img src="excain/static/images/events/event-course-3.jpg"
+                            <a href="single-blog.html"><img src="{% static '/images/events/event-course-3.jpg' %}"
                                     alt="course"></a>
                         </div>
                         <div class="course-card-content">
@@ -559,7 +604,7 @@
                 <div class="col-12 col-md-6 col-lg-4 offset-md-3 offset-lg-0 pb-30">
                     <div class="course-flat-card course-flat-card-thirdcolor">
                         <div class="course-card-thumb">
-                            <a href="single-blog.html"><img src="excain/static/images/events/event-course-2.jpg"
+                            <a href="single-blog.html"><img src="{% static '/images/events/event-course-2.jpg' %}"
                                     alt="course"></a>
                         </div>
                         <div class="course-card-content">

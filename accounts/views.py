@@ -38,7 +38,7 @@ def login_view(request):
 
 
 def register_request(request):
-    print("uewyeuwyu")
+    
     msg = None
     if request.method == "POST":
         print("ok")
