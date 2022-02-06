@@ -3,102 +3,94 @@
 {% block stylesheets %}{% endblock stylesheets %}
 {% load static %}
 {% block content %}
-<main>
-    <header class="header-page">
-        <div class="header-page-shape header-page-shape-bottom">
-            <img src="{% static 'images/shapes/shape-20.png' %}" alt="shape">
+
+<header class="header-page" style="margin-top: 95px;">
+    <div class="header-page-shape header-page-shape-bottom">
+        <img src="{% static 'images/shapes/shape-20.png' %}" alt="shape">
+    </div>
+    <div class="container">
+        <div class="header-page-content">
+            <h1>Gallery</h1>
         </div>
-        <div class="container">
-            <div class="header-page-content">
-                <h1>Gallery</h1>
-<!--                <nav aria-label="breadcrumb">-->
-<!--                    <ol class="breadcrumb">-->
-<!--                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>-->
-<!--                        <li class="breadcrumb-item active" aria-current="page">Gallery</li>-->
-<!--                    </ol>-->
-<!--                </nav>-->
+    </div>
+</header>
+
+<div class="gallery-section pt-100 pb-70">
+    <div class="container">
+        <div class="gallery-section-inner">
+            <div class="gallery-tab-header">
+                <ul class="gallery-selection-tab">
+                    <li class="active" data-filter="*">All</li>
+                    <li data-filter=".photos">Photos</li>
+                    <li data-filter=".campus">Campus</li>
+                    <li data-filter=".students">Students</li>
+                </ul>
             </div>
-        </div>
-    </header>
-
-
-    <div class="gallery-section pt-100 pb-70">
-        <div class="container">
-            <div class="gallery-section-inner">
-                <div class="gallery-tab-header">
-                    <ul class="gallery-selection-tab">
-                        <li class="active" data-filter="*">All</li>
-                        <li data-filter=".photos">Photos</li>
-                        <li data-filter=".campus">Campus</li>
-                        <li data-filter=".students">Students</li>
-                    </ul>
-                </div>
-                <div class="gallery-tab-details popup-gallery">
-                    <div class="row">
-                        <div class="col-12 col-md-6 col-lg-4 element-item photos campus pb-30">
-                            <div class="gallery-card">
-                                <div class="gallery-card-thumb">
-                                    <img src="{% static 'images/gallery/gallery-1.jpg' %}" alt="gallery">
-                                </div>
-                                <div class="gallery-zoom">
-                                    <a href="{% static 'images/gallery/gallery-1.jpg' %}" title="Photos"><i
-                                            class="flaticon-plus"></i></a>
-                                </div>
+            <div class="gallery-tab-details popup-gallery">
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-4 element-item photos campus pb-30">
+                        <div class="gallery-card">
+                            <div class="gallery-card-thumb">
+                                <img src="{% static 'images/gallery/gallery-1.jpg' %}" alt="gallery">
+                            </div>
+                            <div class="gallery-zoom">
+                                <a href="{% static 'images/gallery/gallery-1.jpg' %}" title="Photos"><i
+                                        class="flaticon-plus"></i></a>
                             </div>
                         </div>
-                        <div class="col-12 col-md-6 col-lg-4 element-item campus pb-30">
-                            <div class="gallery-card">
-                                <div class="gallery-card-thumb">
-                                    <img src="{% static 'images/gallery/gallery-2.jpg' %}" alt="gallery">
-                                </div>
-                                <div class="gallery-zoom">
-                                    <a href="{% static 'images/gallery/gallery-2.jpg' %}" title="Campus"><i
-                                            class="flaticon-plus"></i></a>
-                                </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 element-item campus pb-30">
+                        <div class="gallery-card">
+                            <div class="gallery-card-thumb">
+                                <img src="{% static 'images/gallery/gallery-2.jpg' %}" alt="gallery">
+                            </div>
+                            <div class="gallery-zoom">
+                                <a href="{% static 'images/gallery/gallery-2.jpg' %}" title="Campus"><i
+                                        class="flaticon-plus"></i></a>
                             </div>
                         </div>
-                        <div class="col-12 col-md-6 col-lg-4 element-item students photos pb-30">
-                            <div class="gallery-card">
-                                <div class="gallery-card-thumb">
-                                    <img src="{% static 'images/gallery/gallery-3.jpg' %}" alt="gallery">
-                                </div>
-                                <div class="gallery-zoom">
-                                    <a href="{% static 'images/gallery/gallery-3.jpg' %}" title="Students"><i
-                                            class="flaticon-plus"></i></a>
-                                </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 element-item students photos pb-30">
+                        <div class="gallery-card">
+                            <div class="gallery-card-thumb">
+                                <img src="{% static 'images/gallery/gallery-3.jpg' %}" alt="gallery">
+                            </div>
+                            <div class="gallery-zoom">
+                                <a href="{% static 'images/gallery/gallery-3.jpg' %}" title="Students"><i
+                                        class="flaticon-plus"></i></a>
                             </div>
                         </div>
-                        <div class="col-12 col-md-6 col-lg-4 element-item campus pb-30">
-                            <div class="gallery-card">
-                                <div class="gallery-card-thumb">
-                                    <img src="{% static 'images/gallery/gallery-4.jpg' %}" alt="gallery">
-                                </div>
-                                <div class="gallery-zoom">
-                                    <a href="{% static 'images/gallery/gallery-4.jpg' %}" title="Campus"><i
-                                            class="flaticon-plus"></i></a>
-                                </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 element-item campus pb-30">
+                        <div class="gallery-card">
+                            <div class="gallery-card-thumb">
+                                <img src="{% static 'images/gallery/gallery-4.jpg' %}" alt="gallery">
+                            </div>
+                            <div class="gallery-zoom">
+                                <a href="{% static 'images/gallery/gallery-4.jpg' %}" title="Campus"><i
+                                        class="flaticon-plus"></i></a>
                             </div>
                         </div>
-                        <div class="col-12 col-md-6 col-lg-4 element-item students pb-30">
-                            <div class="gallery-card">
-                                <div class="gallery-card-thumb">
-                                    <img src="{% static 'images/gallery/gallery-5.jpg' %}" alt="gallery">
-                                </div>
-                                <div class="gallery-zoom">
-                                    <a href="{% static 'images/gallery/gallery-5.jpg' %}" title="Students"><i
-                                            class="flaticon-plus"></i></a>
-                                </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 element-item students pb-30">
+                        <div class="gallery-card">
+                            <div class="gallery-card-thumb">
+                                <img src="{% static 'images/gallery/gallery-5.jpg' %}" alt="gallery">
+                            </div>
+                            <div class="gallery-zoom">
+                                <a href="{% static 'images/gallery/gallery-5.jpg' %}" title="Students"><i
+                                        class="flaticon-plus"></i></a>
                             </div>
                         </div>
-                        <div class="col-12 col-md-6 col-lg-4 element-item photos students pb-30">
-                            <div class="gallery-card">
-                                <div class="gallery-card-thumb">
-                                    <img src="{% static 'images/gallery/gallery-6.jpg' %}" alt="gallery">
-                                </div>
-                                <div class="gallery-zoom">
-                                    <a href="{% static 'images/gallery/gallery-6.jpg' %}" title="Photos"><i
-                                            class="flaticon-plus"></i></a>
-                                </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 element-item photos students pb-30">
+                        <div class="gallery-card">
+                            <div class="gallery-card-thumb">
+                                <img src="{% static 'images/gallery/gallery-6.jpg' %}" alt="gallery">
+                            </div>
+                            <div class="gallery-zoom">
+                                <a href="{% static 'images/gallery/gallery-6.jpg' %}" title="Photos"><i
+                                        class="flaticon-plus"></i></a>
                             </div>
                         </div>
                     </div>
@@ -106,43 +98,42 @@
             </div>
         </div>
     </div>
+</div>
 
-
-    <section class="partner-section pb-100">
-        <div class="container">
-            <div class="section-title">
-                <h2>They're Our <span>Patronize</span></h2>
-            </div>
-            <div class="partner-carousel swiper-container">
-                <div class="swiper-wrapper">
-                    <div class="partner-item swiper-slide">
-                        <a href="#"><img src="{% static 'images/partners/partner-1.png' %}" alt="partner"></a>
-                    </div>
-                    <div class="partner-item swiper-slide">
-                        <a href="#"><img src="{% static 'images/partners/partner-2.png' %}" alt="partner"></a>
-                    </div>
-                    <div class="partner-item swiper-slide">
-                        <a href="#"><img src="{% static 'images/partners/partner-3.png' %}" alt="partner"></a>
-                    </div>
-                    <div class="partner-item swiper-slide">
-                        <a href="#"><img src="{% static 'images/partners/partner-4.png' %}" alt="partner"></a>
-                    </div>
-                    <div class="partner-item swiper-slide">
-                        <a href="#"><img src="{% static 'images/partners/partner-5.png' %}" alt="partner"></a>
-                    </div>
-                    <div class="partner-item swiper-slide">
-                        <a href="#"><img src="{% static 'images/partners/partner-6.png' %}" alt="partner"></a>
-                    </div>
-                    <div class="partner-item swiper-slide">
-                        <a href="#"><img src="{% static 'images/partners/partner-7.png' %}" alt="partner"></a>
-                    </div>
+<section class="partner-section pb-100">
+    <div class="container">
+        <div class="section-title">
+            <h2>They're Our <span>Patronize</span></h2>
+        </div>
+        <div class="partner-carousel swiper-container">
+            <div class="swiper-wrapper">
+                <div class="partner-item swiper-slide">
+                    <a href="#"><img src="{% static 'images/partners/partner-1.png' %}" alt="partner"></a>
+                </div>
+                <div class="partner-item swiper-slide">
+                    <a href="#"><img src="{% static 'images/partners/partner-2.png' %}" alt="partner"></a>
+                </div>
+                <div class="partner-item swiper-slide">
+                    <a href="#"><img src="{% static 'images/partners/partner-3.png' %}" alt="partner"></a>
+                </div>
+                <div class="partner-item swiper-slide">
+                    <a href="#"><img src="{% static 'images/partners/partner-4.png' %}" alt="partner"></a>
+                </div>
+                <div class="partner-item swiper-slide">
+                    <a href="#"><img src="{% static 'images/partners/partner-5.png' %}" alt="partner"></a>
+                </div>
+                <div class="partner-item swiper-slide">
+                    <a href="#"><img src="{% static 'images/partners/partner-6.png' %}" alt="partner"></a>
+                </div>
+                <div class="partner-item swiper-slide">
+                    <a href="#"><img src="{% static 'images/partners/partner-7.png' %}" alt="partner"></a>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-
-    <section class="become-section pb-100">
+<section class="become-section pb-100">
         <div class="container">
             <div class="bg-main become-section-box">
                 <div class="become-section-shapes">
@@ -182,10 +173,6 @@
             </div>
         </div>
     </section>
-
-
-
-</main>
 
 {% endblock content %}
 {% block javascripts %}
