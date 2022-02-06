@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home',
+    'dashboard',
     'accounts'
+    
 ]
 
 MIDDLEWARE = [
@@ -80,7 +82,7 @@ WSGI_APPLICATION = 'excain.wsgi.application'
 
 
 # Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+# https://docs.djangoproject.co vm/en/3.2/ref/settings/#databases
 
 DATABASES = {
     'default': {
@@ -129,6 +131,7 @@ USE_TZ = True
 STATIC_URL = 'excain/static/'
 STATICFILES_DIRS = (
     os.path.join(CORE_DIR, 'excain/static'),
+    # os.path.join(CORE_DIR, 'excain/static/admin'),
 )
 
 
