@@ -1,6 +1,6 @@
 {% extends "home/base.html" %}
 
-
+{% csrf_token %}
 {% load static %}
 
 {% comment %} {% block stylesheets %}{% endblock stylesheets %} {% endcomment %}
@@ -30,7 +30,7 @@
                     <div class="authentication-item">
                         <h3>Login</h3>
                         <div class="authentication-form">
-                            <form method="POST" action="/login/">
+                            <form method="POST" action="/">
                                 {% csrf_token %}
                                 <div class="form-group mb-20">
                                     <div class="input-group">
@@ -65,7 +65,7 @@
                                 {% endfor %}
                                 {% endfor %}
                                 {% endif %}
-                                <button type="submit" class="btn main-btn full-width">LOG IN</button>
+                                <button type="submit" class="btn main-btn full-width">LOGIN IN</button>
                             </form>
                         </div>
                     </div>

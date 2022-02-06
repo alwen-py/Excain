@@ -1,5 +1,4 @@
-from django import template
-from django.template import loader
+
 from django.urls import reverse
 from django.shortcuts import render
 
@@ -19,6 +18,7 @@ def contactus(request):
 def aboutus(request):
        
     return render(request,'about-us.html')
+
 
 
 

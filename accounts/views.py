@@ -19,7 +19,8 @@ from django.http import HttpResponse, HttpResponseRedirect
 def login_view(request):
     form = LoginForm(request.POST or None)
 
-    msg = None
+    msg1 = "None"
+    msg= "Invalid"
 
     if request.method == "POST":
 
@@ -41,7 +42,6 @@ def register_request(request):
     
     msg = None
     if request.method == "POST":
-        print("ok")
         form = SignUpForm(request.POST)
         print(form)
         if form.is_valid():
@@ -60,7 +60,6 @@ def register_request(request):
             msg = 'Form is not valid'
     else:
         form = SignUpForm()
-        # print(form)
     return render(request,"registration.html",{"form": form, "msg": msg})
 
 
