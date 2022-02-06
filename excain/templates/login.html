@@ -2,25 +2,23 @@
 
 {% csrf_token %}
 {% load static %}
-
+{% block title %}Login{% endblock title %}
 {% comment %} {% block stylesheets %}{% endblock stylesheets %} {% endcomment %}
 {% include 'home/sheets.html' %}
 {% block content %}
 
 <main>
 
-    <header class="header-page">
+     <header class="header-page">
         <div class="header-page-shape header-page-shape-middle">
-            <img src="{% static '/images/shapes/shape-22.png' %}" alt="shape">
+            <img src="../../excain/static/images/shapes/shape-22.png" alt="shape">
         </div>
-        <div class="container" style="max-width: 750px;">
+        <div class="container">
             <div class="header-page-content">
-                <h1 align="right">LOGIN HERE</h1>
-                <nav aria-label="breadcrumb">
-
-                </nav>
+                <h1>Login</h1>
             </div>
         </div>
+    </header>
 
     </header>
     <div class="authentication-section pt-100 pb-70">
