@@ -1,0 +1,193 @@
+{% load static %}
+<div class="preloader bg-blue">
+    <div class="preloader-wrapper">
+        <div class="loader-content book">
+            <figure class="page"></figure>
+            <figure class="page"></figure>
+            <figure class="page"></figure>
+        </div>
+        <h3>Loading</h3>
+    </div>
+</div>
+<div class="fixed-top">
+        <div class="navbar-area navbar-area-three">
+
+            <div class="mobile-nav">
+                <a href="/" class="mobile-brand">
+                    <img src="{% static '/images/excain-logo.png' %}" alt="logo" class="logo">
+                </a>
+                <div class="navbar-option">
+                    <div class="navbar-option-item navbar-option-dots dropdown">
+                        <button type="button" id="dot" data-bs-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            <i class="flaticon-menu"></i>
+                        </button>
+                        <ul class="dropdown-menu navbar-dots-dropdown">
+                            <li class="dropdown-item">
+                                <div class="navbar-option-item navbar-option-language dropdown language-option">
+                                    <button class="dropdown-toggle" type="button" id="language3"
+                                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="flaticon-worldwide"></i>
+                                        <span class="lang-name"></span>
+                                    </button>
+                                    <div class="dropdown-menu language-dropdown-menu" aria-labelledby="language3">
+                                        <a class="dropdown-item" href="#">
+                                            <img src="{% static '/images/usa.png' %}" alt="flag">
+                                            English
+                                        </a>
+                                        <a class="dropdown-item" href="#">
+                                            <img src="{% static '/images/germany.png' %}" alt="flag">
+                                            Deutsch
+                                        </a>
+                                        <a class="dropdown-item" href="#">
+                                            <img src="{% static '/images/china.png' %}" alt="flag">
+                                            简体中文
+                                        </a>
+                                        <a class="dropdown-item" href="#">
+                                            <img src="{% static '/images/uae.png' %}" alt="flag">
+                                            العربيّة
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="dropdown-item">
+                                <div class="navbar-option-item navbar-option-search dropdown">
+                                    <button type="button" id="search1" data-bs-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">
+                                        <i class="flaticon-search"></i>
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="search1">
+                                        <form>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text">
+                                                        <i class="flaticon-search"></i>
+                                                    </div>
+                                                </div>
+                                                <input type="text" class="form-control" placeholder="Search result">
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="dropdown-item">
+                                <div class="navbar-option-item navbar-option-cart">
+                                    <a href="cart.html"><i class="flaticon-shopping-cart"></i>
+                                        <span class="option-badge option-badge-thirdcolor">2</span>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="dropdown-item">
+                                <div class="navbar-option-item navbar-option-wishlist">
+                                    <a href="wishlist.html"><i class="flaticon-heart"></i>
+                                        <span class="option-badge option-badge-thirdcolor">1</span>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="navbar-option-item navbar-option-search dropdown mobile-hide">
+                        <button type="button" id="search" data-bs-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            <i class="flaticon-search"></i>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="search">
+                            <form>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <i class="flaticon-search"></i>
+                                        </div>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="Search result">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="navbar-option-item navbar-option-cart mobile-hide">
+                        <a href="cart.html"><i class="flaticon-shopping-cart"></i>
+                            <span class="option-badge option-badge-thirdcolor">2</span>
+                        </a>
+                    </div>
+                    <div class="navbar-option-item navbar-option-wishlist mobile-hide">
+                        <a href="wishlist.html"><i class="flaticon-heart"></i>
+                            <span class="option-badge option-badge-thirdcolor">1</span>
+                        </a>
+                    </div>
+                    <div class="navbar-option-item navbar-option-account">
+                        <a href="authentication.html"><i class="flaticon-user"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-nav">
+                <div class="container-fluid">
+                    <nav class="navbar navbar-expand-md navbar-light">
+                        <a class="navbar-brand" href="index.html">
+                            <img src="{% static '/images/excain-logo.png' %}" alt="logo" class="logo">
+                        </a>
+                        <div class="navbar-search">
+                            <form>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <i class="flaticon-search"></i>
+                                        </div>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="Search result">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+                            <ul class="navbar-nav mx-auto">
+                                <li class="nav-item">
+                                    <a href="/" class="btn-light">HOME</a>
+
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/gallery" class="btn-light">GALLERY</a>
+
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link dropdown-toggle">COURSES</a>
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item">
+                                            <a href="courses.html" class="nav-link">Courses</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="single-course.html" class="nav-link">Single Course</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="become-a-teacher.html" class="nav-link">Become a Teacher</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="demo-account.html" class="nav-link">Demo Account</a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+
+                                <li class="nav-item">
+                                    <a href="/contactus" class="btn-light">CONTACT US</a>
+
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/aboutus" class="btn-light">ABOUT US</a>
+
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="navbar-option">
+                            <div class="navbar-option-item navbar-option-authentication">
+                                <a href="/login/" class="btn main-btn btn-white text-nowrap">LOGIN</a>
+                            </div>
+                            <div class="navbar-option-item navbar-option-authentication">
+                                <a href="/register/" class="btn main-btn btn-white text-nowrap">
+                                    SIGNUP</a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
