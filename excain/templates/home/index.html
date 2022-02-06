@@ -1,424 +1,13 @@
 {% extends "home/base.html" %}
 {% comment %} {% block title}home{% endblock title %} {% endcomment %}
-
+{% load static %}
 
 {% block stylesheets %}{% endblock stylesheets %}
 
 {% block content %}
 
 <main>
-    <div class="preloader bg-blue">
-        <div class="preloader-wrapper">
-            <div class="loader-content book">
-                <figure class="page"></figure>
-                <figure class="page"></figure>
-                <figure class="page"></figure>
-            </div>
-            <h3>Loading</h3>
-        </div>
-    </div>
-
-
-    <div class="fixed-top">
-        <div class="navbar-area navbar-area-three">
-
-            <div class="mobile-nav">
-                <a href="index.html" class="mobile-brand">
-                    <img src="excain/static/images/logo-3.png" alt="logo" class="logo">
-                </a>
-                <div class="navbar-option">
-                    <div class="navbar-option-item navbar-option-dots dropdown">
-                        <button type="button" id="dot" data-bs-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">
-                            <i class="flaticon-menu"></i>
-                        </button>
-                        <ul class="dropdown-menu navbar-dots-dropdown">
-                            <li class="dropdown-item">
-                                <div class="navbar-option-item navbar-option-language dropdown language-option">
-                                    <button class="dropdown-toggle" type="button" id="language3"
-                                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <i class="flaticon-worldwide"></i>
-                                        <span class="lang-name"></span>
-                                    </button>
-                                    <div class="dropdown-menu language-dropdown-menu" aria-labelledby="language3">
-                                        <a class="dropdown-item" href="#">
-                                            <img src="excain/static/images/usa.png" alt="flag">
-                                            English
-                                        </a>
-                                        <a class="dropdown-item" href="#">
-                                            <img src="excain/static/images/germany.png" alt="flag">
-                                            Deutsch
-                                        </a>
-                                        <a class="dropdown-item" href="#">
-                                            <img src="excain/static/images/china.png" alt="flag">
-                                            简体中文
-                                        </a>
-                                        <a class="dropdown-item" href="#">
-                                            <img src="excain/static/images/uae.png" alt="flag">
-                                            العربيّة
-                                        </a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="dropdown-item">
-                                <div class="navbar-option-item navbar-option-search dropdown">
-                                    <button type="button" id="search1" data-bs-toggle="dropdown" aria-haspopup="true"
-                                        aria-expanded="false">
-                                        <i class="flaticon-search"></i>
-                                    </button>
-                                    <div class="dropdown-menu" aria-labelledby="search1">
-                                        <form>
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                    <div class="input-group-text">
-                                                        <i class="flaticon-search"></i>
-                                                    </div>
-                                                </div>
-                                                <input type="text" class="form-control" placeholder="Search result">
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="dropdown-item">
-                                <div class="navbar-option-item navbar-option-cart">
-                                    <a href="cart.html"><i class="flaticon-shopping-cart"></i>
-                                        <span class="option-badge option-badge-thirdcolor">2</span>
-                                    </a>
-                                </div>
-                            </li>
-                            <li class="dropdown-item">
-                                <div class="navbar-option-item navbar-option-wishlist">
-                                    <a href="wishlist.html"><i class="flaticon-heart"></i>
-                                        <span class="option-badge option-badge-thirdcolor">1</span>
-                                    </a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="navbar-option-item navbar-option-language dropdown mobile-hide language-option">
-                        <button class="dropdown-toggle" type="button" id="language1" data-bs-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            <i class="flaticon-worldwide"></i>
-                            <span class="lang-name"></span>
-                        </button>
-                        <div class="dropdown-menu language-dropdown-menu" aria-labelledby="language1">
-                            <a class="dropdown-item" href="#">
-                                <img src="excain/static/images/usa.png" alt="flag">
-                                English
-                            </a>
-                            <a class="dropdown-item" href="#">
-                                <img src="excain/static/images/germany.png" alt="flag">
-                                Deutsch
-                            </a>
-                            <a class="dropdown-item" href="#">
-                                <img src="excain/static/images/china.png" alt="flag">
-                                简体中文
-                            </a>
-                            <a class="dropdown-item" href="#">
-                                <img src="excain/static/images/uae.png" alt="flag">
-                                العربيّة
-                            </a>
-                        </div>
-                    </div>
-                    <div class="navbar-option-item navbar-option-search dropdown mobile-hide">
-                        <button type="button" id="search" data-bs-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">
-                            <i class="flaticon-search"></i>
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="search">
-                            <form>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <div class="input-group-text">
-                                            <i class="flaticon-search"></i>
-                                        </div>
-                                    </div>
-                                    <input type="text" class="form-control" placeholder="Search result">
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="navbar-option-item navbar-option-cart mobile-hide">
-                        <a href="cart.html"><i class="flaticon-shopping-cart"></i>
-                            <span class="option-badge option-badge-thirdcolor">2</span>
-                        </a>
-                    </div>
-                    <div class="navbar-option-item navbar-option-wishlist mobile-hide">
-                        <a href="wishlist.html"><i class="flaticon-heart"></i>
-                            <span class="option-badge option-badge-thirdcolor">1</span>
-                        </a>
-                    </div>
-                    <div class="navbar-option-item navbar-option-account">
-                        <a href="authentication.html"><i class="flaticon-user"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="main-nav">
-                <div class="container-fluid">
-                    <nav class="navbar navbar-expand-md navbar-light">
-                        <a class="navbar-brand" href="index.html">
-                            <img src="excain/static/images/logo-3.png" alt="logo" class="logo">
-                        </a>
-                        <div class="navbar-search">
-                            <form>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <div class="input-group-text">
-                                            <i class="flaticon-search"></i>
-                                        </div>
-                                    </div>
-                                    <input type="text" class="form-control" placeholder="Search result">
-                                </div>
-                            </form>
-                        </div>
-                        <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
-                            <ul class="navbar-nav mx-auto">
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link dropdown-toggle active">HOME</a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item  nav-item-1">
-                                            <a href="index.html" class="nav-link">Home Demo 1</a>
-                                        </li>
-                                        <li class="nav-item  nav-item-2">
-                                            <a href="index-2.html" class="nav-link">Home Demo 2</a>
-                                        </li>
-                                        <li class="nav-item  nav-item-3">
-                                            <a href="index-3.html" class="nav-link active">Home Demo 3</a>
-                                        </li>
-                                        <li class="nav-item  nav-item-4">
-                                            <a href="index-4.html" class="nav-link">Home Demo 4</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link dropdown-toggle">PAGES</a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                            <a href="gallery.html" class="nav-link">Gallery</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="start-here.html" class="nav-link">Start Here</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="about-us.html" class="nav-link">About Us</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="about-me.html" class="nav-link">About Me</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="success-story.html" class="nav-link">Success Story</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="faqs.html" class="nav-link">FAQ's</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="membership-levels.html" class="nav-link">Membership Levels</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="calender.html" class="nav-link">Calender</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link dropdown-toggle">Career</a>
-                                            <ul class="dropdown-menu">
-                                                <li class="nav-item">
-                                                    <a href="career.html" class="nav-link">Career</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="career-details.html" class="nav-link">Career Details</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link dropdown-toggle">Events</a>
-                                            <ul class="dropdown-menu">
-                                                <li class="nav-item">
-                                                    <a href="events.html" class="nav-link">Events</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="event-details.html" class="nav-link">Event Details</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link dropdown-toggle">Meeting</a>
-                                            <ul class="dropdown-menu">
-                                                <li class="nav-item">
-                                                    <a href="zoom-meetings-and-webinars.html" class="nav-link">Zoom
-                                                        Meetings & Webinars </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="meeting-details.html" class="nav-link">Meeting Details</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link dropdown-toggle">Instructors</a>
-                                            <ul class="dropdown-menu">
-                                                <li class="nav-item">
-                                                    <a href="instructors.html" class="nav-link">Instructors</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="instructor-details.html" class="nav-link">Instructor
-                                                        Details</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link dropdown-toggle">Account</a>
-                                            <ul class="dropdown-menu">
-                                                <li class="nav-item">
-                                                    <a href="authentication.html" class="nav-link">Authentication</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="forget-password.html" class="nav-link">Forget Password</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="profile.html" class="nav-link">Profile</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="edit-account.html" class="nav-link">Edit Account</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link dropdown-toggle">Others</a>
-                                            <ul class="dropdown-menu">
-                                                <li class="nav-item">
-                                                    <a href="terms-service.html" class="nav-link">Terms of Service</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="privacy-policy.html" class="nav-link">Privacy Policy</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="coming-soon.html" class="nav-link">Coming Soon</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="search-page.html" class="nav-link">Search Page</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="404.html" class="nav-link">404 Error Page</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link dropdown-toggle">COURSES</a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                            <a href="courses.html" class="nav-link">Courses</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="single-course.html" class="nav-link">Single Course</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="become-a-teacher.html" class="nav-link">Become a Teacher</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="demo-account.html" class="nav-link">Demo Account</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link dropdown-toggle">SHOP</a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                            <a href="products.html" class="nav-link">Products </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="single-product.html" class="nav-link">Single Product</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="cart.html" class="nav-link">Cart</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="checkout.html" class="nav-link">Checkout</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="wishlist.html" class="nav-link">Wishlist</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="purchase-guide.html" class="nav-link">Purchase Guide</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link dropdown-toggle">BLOG</a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                            <a href="blogs-grid-without-sidebar.html" class="nav-link">Blogs Grid </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="blogs-list-with-sidebar.html" class="nav-link">Blogs List </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="single-blog.html" class="nav-link">Single Blog</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link dropdown-toggle">CONTACT</a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                            <a href="contact-us.html" class="nav-link">Contact Us </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="contact-me.html" class="nav-link">Contact Me </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="navbar-option">
-                            <div class="nnavbar-option-item navbar-option-language dropdown language-option">
-                                <button class="dropdown-toggle" type="button" id="language2" data-bs-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
-                                    <i class="flaticon-worldwide"></i>
-                                    <span class="lang-name"></span>
-                                </button>
-                                <div class="dropdown-menu language-dropdown-menu" aria-labelledby="language2">
-                                    <a class="dropdown-item" href="#">
-                                        <img src="excain/static/images/usa.png" alt="flag">
-                                        English
-                                    </a>
-                                    <a class="dropdown-item" href="#">
-                                        <img src="excain/static/images/germany.png" alt="flag">
-                                        Deutsch
-                                    </a>
-                                    <a class="dropdown-item" href="#">
-                                        <img src="excain/static/images/china.png" alt="flag">
-                                        简体中文
-                                    </a>
-                                    <a class="dropdown-item" href="#">
-                                        <img src="excain/static/images/uae.png" alt="flag">
-                                        العربيّة
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="navbar-option-item navbar-option-cart">
-                                <a href="cart.html"><i class="flaticon-shopping-cart"></i>
-                                    <span class="option-badge option-badge-thirdcolor">2</span>
-                                </a>
-                            </div>
-                            <div class="navbar-option-item navbar-option-wishlist">
-                                <a href="wishlist.html"><i class="flaticon-heart"></i>
-                                    <span class="option-badge option-badge-thirdcolor">1</span>
-                                </a>
-                            </div>
-                            <div class="navbar-option-item navbar-option-authentication">
-                                <a href="authentication.html" class="btn main-btn btn-white text-nowrap">LOGIN /
-                                    SIGNUP</a>
-                            </div>
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
+ 
     <header class="header-bg-three">
         <div class="container-fluid">
             <div class="row align-items-center">
@@ -445,7 +34,7 @@
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-6">
                     <div class="header-content-image text-center">
-                        <img src="excain/static/images/index-3-header/header-3-shape.png" alt="header">
+                        <img src="{% static '/images/index-3-header/header-3-shape.png' %}" alt="header">
                     </div>
                 </div>
             </div>
@@ -456,22 +45,22 @@
     <div class="about-section bg-off-white pt-100 pb-70 position-relative overflow-hidden">
         <div class="background-shapes">
             <div class="background-shape-item">
-                <img src="excain/static/images/shapes/curved-line.png" alt="line">
+                <img src="{% static '/images/shapes/curved-line.png' %}" alt="line">
             </div>
             <div class="background-shape-item">
-                <img src="excain/static/images/shapes/half-circle-shape.png" alt="line">
+                <img src="{% static '/images/shapes/half-circle-shape.png' %}" alt="line">
             </div>
         </div>
         <div class="animate-shapes">
             <div class="animate-shape animation-tab-none">
-                <img src="excain/static/images/shapes/animate-shape-3.png" alt="shape">
+                <img src="{% static '/images/shapes/animate-shape-3.png' %}" alt="shape">
             </div>
         </div>
         <div class="container">
             <div class="row">
                 <div class="col-12 col-sm-6 col-lg-3 pb-30">
                     <div class="about-item-card about-item-card-thirdcolor">
-                        <img src="excain/static/images/shapes/about-grid-icon.png" class="about-card-image" alt="icon">
+                        <img src="{% static '/images/shapes/about-grid-icon.png' %}" class="about-card-image" alt="icon">
                         <div class="about-card-icon">
                             <i class="flaticon-book-of-black-cover-closed"></i>
                             <i class="flaticon-mortarboard"></i>
@@ -484,7 +73,7 @@
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3 pb-30">
                     <div class="about-item-card about-item-card-thirdcolor">
-                        <img src="excain/static/images/shapes/about-grid-icon.png" class="about-card-image" alt="icon">
+                        <img src="{% static '/images/shapes/about-grid-icon.png' %}" class="about-card-image" alt="icon">
                         <div class="about-card-icon">
                             <i class="flaticon-laptop"></i>
                             <i class="flaticon-web"></i>
@@ -497,7 +86,7 @@
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3 pb-30">
                     <div class="about-item-card about-item-card-thirdcolor">
-                        <img src="excain/static/images/shapes/about-grid-icon.png" class="about-card-image" alt="icon">
+                        <img src="{% static '/images/shapes/about-grid-icon.png' %}" class="about-card-image" alt="icon">
                         <div class="about-card-icon">
                             <i class="flaticon-pencil"></i>
                             <i class="flaticon-agenda"></i>
@@ -510,7 +99,7 @@
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3 pb-30">
                     <div class="about-item-card about-item-card-thirdcolor">
-                        <img src="excain/static/images/shapes/about-grid-icon.png" class="about-card-image" alt="icon">
+                        <img src="{% static '/images/shapes/about-grid-icon.png' %}" class="about-card-image" alt="icon">
                         <div class="about-card-icon">
                             <i class="flaticon-monitor"></i>
                             <i class="flaticon-address-book"></i>
@@ -569,7 +158,7 @@
                 <div class="col-12 col-lg-6 pb-30">
                     <div class="course-card course-card-list course-card-thirdcolor">
                         <div class="course-card-thumb course-card-thumb-thirdcolor">
-                            <a href="single-course.html"><img src="excain/static/images/shapes/course-shape-1.png"
+                            <a href="single-course.html"><img src="{% static '/images/shapes/course-shape-1.png' %}"
                                     alt="course"></a>
                         </div>
                         <div class="course-card-content">
@@ -590,7 +179,7 @@
                 <div class="col-12 col-lg-6 pb-30">
                     <div class="course-card course-card-list course-card-thirdcolor">
                         <div class="course-card-thumb course-card-thumb-violet">
-                            <a href="single-course.html"><img src="excain/static/images/shapes/course-shape-2.png"
+                            <a href="single-course.html"><img src="{% static '/images/shapes/course-shape-2.png' %}"
                                     alt="course"></a>
                         </div>
                         <div class="course-card-content">
@@ -610,7 +199,7 @@
                 <div class="col-12 col-lg-6 pb-30">
                     <div class="course-card course-card-list course-card-thirdcolor">
                         <div class="course-card-thumb course-card-thumb-skyblue">
-                            <a href="single-course.html"><img src="excain/static/images/shapes/course-shape-3.png"
+                            <a href="single-course.html"><img src="{% static '/images/shapes/course-shape-3.png' %}"
                                     alt="course"></a>
                         </div>
                         <div class="course-card-content">
@@ -631,7 +220,7 @@
                 <div class="col-12 col-lg-6 pb-30">
                     <div class="course-card course-card-list course-card-thirdcolor">
                         <div class="course-card-thumb course-card-thumb-yellow">
-                            <a href="single-course.html"><img src="excain/static/images/shapes/course-shape-4.png"
+                            <a href="single-course.html"><img src="{% static '/images/shapes/course-shape-4.png' %}"
                                     alt="course"></a>
                         </div>
                         <div class="course-card-content">
@@ -650,7 +239,7 @@
                 <div class="col-12 col-lg-6 pb-30">
                     <div class="course-card course-card-list course-card-thirdcolor">
                         <div class="course-card-thumb course-card-thumb-purple">
-                            <a href="single-course.html"><img src="excain/static/images/shapes/course-shape-5.png"
+                            <a href="single-course.html"><img src="{% static '/images/shapes/course-shape-5.png' %}"
                                     alt="course"></a>
                         </div>
                         <div class="course-card-content">
@@ -670,7 +259,7 @@
                 <div class="col-12 col-lg-6 pb-30">
                     <div class="course-card course-card-list course-card-thirdcolor">
                         <div class="course-card-thumb course-card-thumb-blue">
-                            <a href="single-course.html"><img src="excain/static/images/shapes/course-shape-6.png"
+                            <a href="single-course.html"><img src="{% static '/images/shapes/course-shape-6.png' %}"
                                     alt="course"></a>
                         </div>
                         <div class="course-card-content">
@@ -720,7 +309,7 @@
                     <div class="offer-card offer-card-thirdcolor">
                         <div class="offer-card-inner">
                             <div class="offer-card-thumb">
-                                <img src="excain/static/images/shapes/offer-shape-1.png" alt="shape">
+                                <img src="{% static '/images/shapes/offer-shape-1.png' %}" alt="shape">
                             </div>
                             <div class="offer-card-content">
                                 <h3>Business Studies</h3>
@@ -734,7 +323,7 @@
                     <div class="offer-card offer-card-thirdcolor">
                         <div class="offer-card-inner">
                             <div class="offer-card-thumb">
-                                <img src="excain/static/images/shapes/offer-shape-2.png" alt="shape">
+                                <img src="{% static '/images/shapes/offer-shape-2.png' %}" alt="shape">
                             </div>
                             <div class="offer-card-content">
                                 <h3>Web Development</h3>
@@ -748,7 +337,7 @@
                     <div class="offer-card offer-card-thirdcolor">
                         <div class="offer-card-inner">
                             <div class="offer-card-thumb">
-                                <img src="excain/static/images/shapes/offer-shape-3.png" alt="shape">
+                                <img src="{% static '/images/shapes/offer-shape-3.png' %}" alt="shape">
                             </div>
                             <div class="offer-card-content">
                                 <h3>Idea Discussion</h3>
@@ -762,8 +351,53 @@
                 <div class="col-12 col-sm-6 col-lg-3 pb-30">
                     <div class="offer-card offer-card-thirdcolor">
                         <div class="offer-card-inner">
-                            <div class="offer-card-thumb">
-                                <img src="excain/static/images/shapes/offer-shape-4.png" alt="shape">
+                            <div class
+                            <script data-cfasync="false"
+                                src="https://templates.hibootstrap.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+                            <script src="assets/js/jquery-3.5.1.min.js"></script>
+                            <script src="assets/js/bootstrap.bundle.min.js"></script>
+                        
+                            <script src="assets/js/jquery.magnific-popup.min.js"></script>
+                        
+                            <script src="assets/js/swiper-bundle.min.js"></script>
+                        
+                            <script src="assets/js/jquery.waypoints.min.js"></script>
+                            <script src="assets/js/jquery.counterup.min.js"></script>
+                        
+                            <script src="assets/js/moment.js"></script>
+                            <script src="assets/js/main.min.js"></script>
+                            <script src="assets/js/jquery-ui.js"></script>
+                        
+                            <script src="assets/js/isotope.pkgd.min.js"></script>
+                        
+                            <script src="assets/js/jquery.themepunch.revolution.min.js"></script>
+                            <script src="assets/js/jquery.themepunch.tools.min.js"></script>
+                        
+                            <script src="assets/js/extensions/revolution.extension.actions.min.js"></script>
+                            <script src="assets/js/extensions/revolution.extension.carousel.min.js"></script>
+                            <script src="assets/js/extensions/revolution.extension.kenburn.min.js"></script>
+                            <script src="assets/js/extensions/revolution.extension.layeranimation.min.js"></script>
+                            <script src="assets/js/extensions/revolution.extension.migration.min.js"></script>
+                            <script src="assets/js/extensions/revolution.extension.navigation.min.js"></script>
+                            <script src="assets/js/extensions/revolution.extension.parallax.min.js"></script>
+                            <script src="assets/js/extensions/revolution.extension.slideanims.min.js"></script>
+                            <script src="assets/js/extensions/revolution.extension.video.min.js"></script>
+                        
+                            <script src="assets/js/jquery.ajaxchimp.min.js"></script>
+                        
+                            <script src="assets/js/form-validator.min.js"></script>
+                        
+                            <script src="assets/js/contact-form-script.js"></script>
+                        
+                            <script src="assets/js/jquery.meanmenu.min.js"></script>
+                        
+                            <script src="assets/js/script.js"></script>
+                            </body>
+                        
+                            <!-- Mirrored from templates.hibootstrap.com/jexi/default/contact-us.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 06 Jan 2022 18:24:37 GMT -->
+                        
+                            </html>="offer-card-thumb">
+                                <img src="{% static '/images/shapes/offer-shape-4.png' %}" alt="shape">
                             </div>
                             <div class="offer-card-content">
                                 <h3>Graphic Design</h3>
@@ -784,15 +418,15 @@
             <div class="video-bg pt-100 bg-off-white">
                 <div class="video-bg-shapes">
                     <div class="video-bg-shape-item">
-                        <img src="excain/static/images/shapes/line-area-shape.png" alt="shape">
+                        <img src="{% static '/images/shapes/line-area-shape.png' %}" alt="shape">
                     </div>
                 </div>
                 <div class="video-animation-items">
                     <div class="video-animation-item animation-tab-none">
-                        <img src="excain/static/images/shapes/abstract-shape-1.png" alt="shape">
+                        <img src="{% static '/images/shapes/abstract-shape-1.png' %}" alt="shape">
                     </div>
                     <div class="video-animation-item animation-tab-none">
-                        <img src="excain/static/images/shapes/abstract-shape-2.png" alt="shape">
+                        <img src="{% static '/images/shapes/abstract-shape-2.png' %}" alt="shape">
                     </div>
                 </div>
                 <div class="section-title section-title-shapeless section-title-lineless section-title-thirdcolor">
@@ -800,14 +434,14 @@
                 </div>
             </div>
             <div class="video-content">
-                <img src="excain/static/images/videos-bg/video-image-2.jpg" alt="vide">
+                <img src="{% static '/images/videos-bg/video-image-2.jpg' %}" alt="vide">
                 <div class="video-button video-button-thirdcolor">
                     <a href="https://www.youtube.com/watch?v=BRvyWfuxGuU" id="video-popup"><i
                             class="flaticon-play-button"></i></a>
                 </div>
                 <div class="content-animation-shapes">
                     <div class="content-animation-shape animation-tab-none">
-                        <img src="excain/static/images/shapes/combined-circle-shape.png" alt="shape">
+                        <img src="{% static '/images/shapes/combined-circle-shape.png' %}" alt="shape">
                     </div>
                 </div>
             </div>
@@ -838,7 +472,7 @@
                         <div class="testimonial-carousel-header">
                             <div class="testimonial-header-text font-family-3">Reliable</div>
                             <div class="testimonial-header-thumb">
-                                <img src="excain/static/images/clients/client-1.jpg" alt="client">
+                                <img src="{% static '/images/clients/client-1.jpg' %}" alt="client">
                             </div>
                         </div>
                         <div class="testimonial-carousel-content-two">
@@ -852,7 +486,7 @@
                         <div class="testimonial-carousel-header">
                             <div class="testimonial-header-text font-family-3">Awesome</div>
                             <div class="testimonial-header-thumb">
-                                <img src="excain/static/images/clients/client-2.jpg" alt="client">
+                                <img src="{% static '/images/clients/client-2.jpg' %}" alt="client">
                             </div>
                         </div>
                         <div class="testimonial-carousel-content-two">
@@ -866,13 +500,13 @@
                         <div class="testimonial-carousel-header">
                             <div class="testimonial-header-text font-family-3">Perfect</div>
                             <div class="testimonial-header-thumb">
-                                <img src="excain/static/images/clients/client-3.jpg" alt="client">
+                                <img src="{% static '/images/clients/client-3.jpg' %}" alt="client">
                             </div>
                         </div>
                         <div class="testimonial-carousel-content-two">
                             <h3>“Perfect Guidelines”</h3>
                             <p>Tatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consquuntur magni dolores
-                                eos qui ratione voluptatem sequi nesciunt Neque porro qui incidunt ut labore et dolore
+                                assets/images                   eos qui ratione voluptatem sequi nesciunt Neque porro qui incidunt ut labore et dolore
                                 mvoluptatem.</p>
                         </div>
                     </div>
@@ -891,25 +525,25 @@
             <div class="partner-carousel swiper-container">
                 <div class="swiper-wrapper">
                     <div class="partner-item swiper-slide">
-                        <a href="#"><img src="excain/static/images/partners/partner-1.png" alt="partner"></a>
+                        <a href="#"><img src="{% static '/images/partners/partner-1.png' %}" alt="partner"></a>
                     </div>
                     <div class="partner-item swiper-slide">
-                        <a href="#"><img src="excain/static/images/partners/partner-2.png" alt="partner"></a>
+                        <a href="#"><img src="{% static '/images/partners/partner-2.png' %}" alt="partner"></a>
                     </div>
                     <div class="partner-item swiper-slide">
-                        <a href="#"><img src="excain/static/images/partners/partner-3.png" alt="partner"></a>
+                        <a href="#"><img src="{% static '/images/partners/partner-3.png' %}" alt="partner"></a>
                     </div>
                     <div class="partner-item swiper-slide">
-                        <a href="#"><img src="excain/static/images/partners/partner-4.png" alt="partner"></a>
+                        <a href="#"><img src="{% static '/images/partners/partner-4.png' %}" alt="partner"></a>
                     </div>
                     <div class="partner-item swiper-slide">
-                        <a href="#"><img src="excain/static/images/partners/partner-5.png" alt="partner"></a>
+                        <a href="#"><img src="{% static '/images/partners/partner-5.png' %}" alt="partner"></a>
                     </div>
                     <div class="partner-item swiper-slide">
-                        <a href="#"><img src="excain/static/images/partners/partner-6.png" alt="partner"></a>
+                        <a href="#"><img src="{% static '/images/partners/partner-6.png' %}" alt="partner"></a>
                     </div>
                     <div class="partner-item swiper-slide">
-                        <a href="#"><img src="excain/static/images/partners/partner-7.png" alt="partner"></a>
+                        <a href="#"><img src="{% static '/images/partners/partner-7.png' %}" alt="partner"></a>
                     </div>
                 </div>
             </div>
@@ -930,7 +564,7 @@
                 <div class="col-12 col-md-6 col-lg-4 pb-30">
                     <div class="course-flat-card course-flat-card-thirdcolor">
                         <div class="course-card-thumb">
-                            <a href="single-blog.html"><img src="excain/static/images/events/event-course-1.jpg"
+                            <a href="single-blog.html"><img src="{% static '/images/events/event-course-1.jpg' %}"
                                     alt="course"></a>
                         </div>
                         <div class="course-card-content">
@@ -950,7 +584,7 @@
                 <div class="col-12 col-md-6 col-lg-4 pb-30">
                     <div class="course-flat-card course-flat-card-thirdcolor">
                         <div class="course-card-thumb">
-                            <a href="single-blog.html"><img src="excain/static/images/events/event-course-3.jpg"
+                            <a href="single-blog.html"><img src="{% static '/images/events/event-course-3.jpg' %}"
                                     alt="course"></a>
                         </div>
                         <div class="course-card-content">
@@ -970,7 +604,7 @@
                 <div class="col-12 col-md-6 col-lg-4 offset-md-3 offset-lg-0 pb-30">
                     <div class="course-flat-card course-flat-card-thirdcolor">
                         <div class="course-card-thumb">
-                            <a href="single-blog.html"><img src="excain/static/images/events/event-course-2.jpg"
+                            <a href="single-blog.html"><img src="{% static '/images/events/event-course-2.jpg' %}"
                                     alt="course"></a>
                         </div>
                         <div class="course-card-content">
@@ -994,11 +628,7 @@
 
   
 
-    <div class="scroll-top scroll-top-thirdcolor" id="scrolltop">
-        <div class="scroll-top-inner">
-            <span><i class="flaticon-up-arrow"></i></span>
-        </div>
-    </div>
+    
 </main>
 {% endblock content %}
 {% block javascripts %}
