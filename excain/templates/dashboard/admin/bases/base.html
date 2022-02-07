@@ -325,6 +325,7 @@
 <!-- START GLOBAL  SCRIPT -->
 <script src="{% static '/global/js/core/plugins.js' %}"></script>
 <script src="{% static '/global/js/demo/skintools.js' %}"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <!-- END GLOBAL  SCRIPT -->
 
 <!-- START PAGE  SCRIPT -->
@@ -332,6 +333,11 @@
 <script src="{% static '/js/core/app.js' %}"></script>
 
 <!-- END PAGE  SCRIPT -->
+{% for msgs in msg %}
+<script>
 
+    swal({{'msgs'}});
 
+</script>
+{% endfor %}
 </html>

@@ -10,14 +10,13 @@
         <div class="logo-main">
             <a href="../index.html"><img src="{% static '/global/img/logo-login.png' %}" alt="Laraspace Logo"></a>
         </div>
-        <form action="/dashboard" id="loginForm" method="POST">
+        <form action="/dashlogin/" id="loginForm" method="POST">
             {% csrf_token %}
             <div class="form-group mb-20">
                 <div class="input-group">
                     {{ form.username }}
                 </div>
             </div><br>
-            <span style="color:red; !important" class="text-error">{{ form.error }}</span>
             <div class="form-group mb-20">
                 <div class="input-group">
                     {{ form.password }}
@@ -39,14 +38,7 @@
                     <a href="../forgot-password.html" class="forgot-link">Forgot Password?</a>
                 </div>
             </div>
-            <button class="btn btn-theme btn-full">Login</button>
-            {% if form.errors %}
-            {% for field in form %}
-            {% for error in field.errors %}
-            <p> {{ error }} </p>
-            {% endfor %}
-            {% endfor %}
-            {% endif %}
+            <button class="btn btn-theme btn-full" type="submit">Login</button>
         </form>
         <div class="page-copyright">
             <p>Powered by <a href="http://bytefury.com/" target="_blank">Bytefury</a></p>
