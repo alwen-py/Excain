@@ -18,13 +18,11 @@ from django.http import HttpResponse, HttpResponseRedirect
 
 def login_view(request):
     form = LoginForm(request.POST or None)
-
-    msg1 = "None"
-    msg= "Invalid"
-
+    msg = "Invalid"
     if request.method == "POST":
-
+        print("ok")
         if form.is_valid():
+            print(form)
             username = form.cleaned_data.get("username")
             password = form.cleaned_data.get("password")
             user = authenticate(username=username, password=password)
@@ -32,35 +30,30 @@ def login_view(request):
                 login(request, user)
                 return redirect("/")
             else:
-                return render(request, "login.html", {"form": form, "msg": msg})
+                msg = 'Form is not valid'
         else:
-            return render(request, "login.html", {"form": form, "msg": msg})
+            form
     return render(request, "login.html", {"form": form, "msg": msg})
 
 
 def register_request(request):
-    
     msg = None
+    success = False
     if request.method == "POST":
         form = SignUpForm(request.POST)
-        print(form)
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get("username")
             raw_password = form.cleaned_data.get("password1")
             user = authenticate(username=username, password=raw_password)
-
             msg = 'User created successfully.'
-            
             success = True
-
-            # return redirect("/login/")
-
+            return redirect("/login/")
         else:
             msg = 'Form is not valid'
     else:
         form = SignUpForm()
-    return render(request,"registration.html",{"form": form, "msg": msg})
+    return render(request,"registration.html", {"form": form, "msg": msg, "success": success})
 
 
 # def register_user(request):
