@@ -4,3 +4,7 @@ from django.shortcuts import render
 
 def dash(request):
     return render(request,'dashboard/admin/dash/basic.html')
+
+
+def dashlogin(request):
+    return render(request,'dashboard/admin/login-2.html')
