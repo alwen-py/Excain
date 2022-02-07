@@ -4,6 +4,7 @@ from dashboard import views
 
 
 urlpatterns = [
-    path('dash/',dash, name="dash"),
-    path('dashlogin/',dashlogin, name="dashlogin")
+    path('dash',dash, name="dash"),
+    path('dashlogin/', login_view, name="dashlogin")
+    
 ]

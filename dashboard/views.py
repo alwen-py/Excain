@@ -28,8 +28,8 @@ def login_view(request):
                 login(request, user)
                 return redirect("/")
             else:
-                return render(request, "basic.html", {"form": form, "msg": msg})
+                return render(request, "dashboard/admin/dash/basic.html", {"form": form, "msg": msg})
         else:
-            return render(request, "login.html", {"form": form, "msg": msg})
-    return render(request, "login.html", {"form": form, "msg": msg})
+            return render(request, "dashboard/admin/login-2.html", {"form": form, "msg": msg})
+    return render(request, "dashboard/admin/login-2.html", {"form": form, "msg": msg})
 
