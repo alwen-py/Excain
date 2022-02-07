@@ -71,7 +71,7 @@
                     </ul>
                 </li>
                 <li class="">
-                    <a href="#"><i class="icon-fa icon-fa-th-large"></i> Layouts <span
+                    <a href="/layouts"><i class="icon-fa icon-fa-th-large"></i> Layouts <span
                             class="icon-fa arrow icon-fa-fw"></span> </a>
                     <ul aria-expanded="true" class="collapse">
                         <li class="">
@@ -202,7 +202,7 @@
                             <a href="../forms/advanced.html">Advanced Elements</a>
                         </li>
                         <li class="">
-                            <a href="../forms/layouts.html">Form Layouts</a>
+                            <a href="/layouts">Form Layouts</a>
                         </li>
                         <li class="">
                             <a href="../forms/validation.html">Form Validation</a>
@@ -262,7 +262,7 @@
                             class="icon-fa arrow icon-fa-fw"></span> </a>
                     <ul aria-expanded="true" class="collapse">
                         <li class="">
-                            <a href="../users.html">All Users</a>
+                            <a href="/users">All Users</a>
                         </li>
                         <li class="">
                             <a href="../users/1.html">User Profile</a>
@@ -477,14 +477,10 @@
     </div>
 </div>
 
-<!-- START GLOBAL  SCRIPT -->
-<script src="../../assets/global/js/core/plugins.js"></script>
-<script src="../../assets/global/js/demo/skintools.js"></script>
-<!-- END GLOBAL  SCRIPT -->
 
 <!-- START PAGE  SCRIPT -->
-<script src="../../assets/plugins/Chartjs/Chart.js"></script>
-<script src="../../assets/global/js/core/app.js"></script>
+<script src="{% static '/plugins/Chartjs/Chart.js' %}"></script>
+<script src="{% static '/global/js/core/app.js' %}"></script>
 <!-- END PAGE  SCRIPT -->
 </main>
 {% endblock content %}

@@ -1,5 +1,4 @@
 {% extends 'dashboard/admin/bases/base.html' %}
-{% csrf_token %}
 {% load static %}
 {% block title %}Login{% endblock title %}
 {% block stylesheets %}{% endblock stylesheets %}
@@ -11,13 +10,20 @@
         <div class="logo-main">
             <a href="../index.html"><img src="{% static '/global/img/logo-login.png' %}" alt="Laraspace Logo"></a>
         </div>
-        <form action="/dash" id="loginForm" method="post">
-            <input type="hidden" name="_token" value="ju0AJjtVlV2LnL9lhkK9fOpg7DhuaMFVgR1mifUv">
-            <div class="form-group">
-                {{ form.username }}
-            </div>
-            <div class="form-group">
-                {{ form.password }}
+        <form action="/dashboard" id="loginForm" method="POST">
+            {% csrf_token %}
+            <div class="form-group mb-20">
+                <div class="input-group">
+                    {{ form.username }}
+                </div>
+            </div><br>
+            <span style="color:red; !important" class="text-error">{{ form.error }}</span>
+            <div class="form-group mb-20">
+                <div class="input-group">
+                    {{ form.password }}
+                </div>
+                <span style="color:red; !important"
+                    class="text-error">{{ form.password.errors }}</span>
             </div>
             <div class="other-actions row">
                 <div class="col-6">
@@ -48,6 +54,10 @@
         </div>
     </div>
 </div>
+<script src="{% static '/pages/sessions/login.js' %}"></script>
+
+<script src="{% static '/plugins/Chartjs/Chart.js' %}"></script>
+<script src="{% static '/js/core/app.js' %}"></script>
 </main>
 {% endblock content %}
 {% block javascripts %}

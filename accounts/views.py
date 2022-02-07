@@ -1,6 +1,3 @@
-
-
-from django.template import loader
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from .forms import SignUpForm, LoginForm
@@ -10,7 +7,6 @@ def login_view(request):
     form = LoginForm(request.POST or None)
     msg = "Invalid"
     if request.method == "POST":
-        print("ok")
         if form.is_valid():
             print(form)
             username = form.cleaned_data.get("username")
