@@ -22,18 +22,6 @@
                 <a class="navbar-brand" href="/">
                     <img src="{% static '/images/excain-logo.png' %}" alt="logo" class="logo">
                 </a>
-                <div class="navbar-search">
-                    <form>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <div class="input-group-text">
-                                    <i class="flaticon-search"></i>
-                                </div>
-                            </div>
-                            <input type="text" class="form-control" placeholder="Search result">
-                        </div>
-                    </form>
-                </div>
                 <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item">
@@ -53,14 +41,34 @@
                         </li>
                     </ul>
                 </div>
-                <div class="navbar-option">
-                    <div class="navbar-option-item navbar-option-authentication">
-                        <a href="/login/" class="btn main-btn btn-thirdcolor text-nowrap">LOGIN</a>
-                    </div>
-                    <div class="navbar-option-item navbar-option-authentication">
-                        <a href="/register/" class="btn main-btn btn-thirdcolor text-nowrap">SIGNUP</a>
+                {% if user.is_authenticated %}
+                <div class="nnavbar-option-item navbar-option-language dropdown btn main-btn btn-thirdcolor text-nowrap">
+                     <button class="dropdown-toggle" type="button" id="language2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                       <i class="flaticon-user"></i>
+                       <span class="lang-name">{{ user.username }}</span>
+                     </button>
+                    <div class="dropdown-menu language-dropdown-menu" aria-labelledby="language2">
+                        <a href="/" class="dropdown-item" href="#">
+                          <li>Profile</li>
+                        </a>
+                        <a  href="/" class="dropdown-item" href="#">
+                          <li>Change Password</li>
+                        </a>
+                        <a  href="/logout/" class="dropdown-item" href="#">
+                          <li>Logout</li>
+                        </a>
                     </div>
                 </div>
+                {% else %}
+                <div class="navbar-option">
+                    <div class="navbar-option-item navbar-option-authentication">
+                        <a href="/login/" class="btn main-btn btn-thirdcolor ">LOGIN</a>
+                    </div>
+                    <div class="navbar-option-item navbar-option-authentication">
+                        <a href="/register/" class="btn main-btn btn-thirdcolor ">SIGNUP</a>
+                    </div>
+                </div>
+                {% endif %}
             </nav>
         </div>
     </div>

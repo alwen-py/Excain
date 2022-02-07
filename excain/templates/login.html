@@ -25,7 +25,7 @@
               <div class="authentication-item">
                   <h3>Login</h3>
                   <div class="authentication-form">
-                      <form method="POST" action="/">
+                      <form method="POST" action="/login/">
                           {% csrf_token %}
                           <div class="form-group mb-20">
                               <div class="input-group">
@@ -60,7 +60,7 @@
                           {% endfor %}
                           {% endfor %}
                           {% endif %}
-                          <button type="submit" class="btn main-btn full-width">LOGIN IN</button>
+                          <button type="submit" class="btn main-btn full-width">LOGIN</button>
                       </form>
                   </div>
               </div>

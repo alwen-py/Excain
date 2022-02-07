@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'home',
     'dashboard',
     'accounts'
-    
+
 ]
 
 MIDDLEWARE = [
@@ -72,7 +72,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
             ],
             'libraries' : {
-                'staticfiles': 'django.templatetags.static', 
+                'staticfiles': 'django.templatetags.static',
             }
         },
     },
@@ -124,7 +124,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 # STATIC_ROOT = os.path.join(CORE_DIR, 'excain/staticfiles')
@@ -133,6 +132,8 @@ STATICFILES_DIRS = (
     os.path.join(CORE_DIR, 'excain/static'),
     # os.path.join(CORE_DIR, 'excain/static/admin'),
 )
+
+LOGOUT_REDIRECT_URL = '/'
 
 
 
