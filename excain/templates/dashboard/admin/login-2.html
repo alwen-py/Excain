@@ -1,6 +1,6 @@
 {% extends 'dashboard/admin/bases/base.html' %}
 {% load static %}
-{% block title %}Basic{% endblock title %}
+{% block title %}Login{% endblock title %}
 {% block stylesheets %}{% endblock stylesheets %}
 {% block content %}
 
@@ -10,14 +10,13 @@
         <div class="logo-main">
             <a href="../index.html"><img src="{% static '/global/img/logo-login.png' %}" alt="Laraspace Logo"></a>
         </div>
-        <form action="http://laraspace.dev/login" id="loginForm" method="post">
+        <form action="/dash" id="loginForm" method="post">
             <input type="hidden" name="_token" value="ju0AJjtVlV2LnL9lhkK9fOpg7DhuaMFVgR1mifUv">
             <div class="form-group">
-                <input type="email" class="form-control form-control-danger" placeholder="Enter email" name="email">
+                {{ form.username }}
             </div>
             <div class="form-group">
-                <input type="password" class="form-control form-control-danger" placeholder="Enter Password"
-                       name="password">
+                {{ form.password }}
             </div>
             <div class="other-actions row">
                 <div class="col-6">
@@ -34,21 +33,13 @@
                 </div>
             </div>
             <button class="btn btn-theme btn-full">Login</button>
-            <div class="form-group other-options">
-                <div class="social-caption pull-left">
-                    <h6>
-                        Or Login With
-                    </h6>
-                </div>
-                <div class="social-icons pull-right">
-                    <a href="../auth/facebook.html" class="btn btn-default text-primary btn-icon"><i
-                            class="icon-fa icon-fa-facebook"></i></a>
-                    <a href="../auth/google.html" class="btn btn-default text-danger btn-icon"><i
-                            class="icon-fa icon-fa-google"></i></a>
-                    <a href="../auth/github.html" class="btn btn-default btn-icon text-default"><i
-                            class="icon-fa icon-fa-github"></i></a>
-                </div>
-            </div>
+            {% if form.errors %}
+            {% for field in form %}
+            {% for error in field.errors %}
+            <p> {{ error }} </p>
+            {% endfor %}
+            {% endfor %}
+            {% endif %}
         </form>
         <div class="page-copyright">
             <p>Powered by <a href="http://bytefury.com/" target="_blank">Bytefury</a></p>

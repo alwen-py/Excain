@@ -1,19 +1,9 @@
-# -*- encoding: utf-8 -*-
-"""
-Copyright (c) 2019 - present AppSeed.us
-"""
 
-# Create your views here.
-import email
-from django.urls import reverse
-from django import template
-from django.contrib import messages
 
 from django.template import loader
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from .forms import SignUpForm, LoginForm
-from django.http import HttpResponse, HttpResponseRedirect
 
 
 def login_view(request):
