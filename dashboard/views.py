@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login
 from .forms import DashBoardLoginForm
-
+from django.contrib import messages
 
 @login_required
 def dashboard(request):
@@ -34,11 +34,12 @@ def login_view(request):
             if user is not None:
                 if user.is_superuser:
                     login(request, user)
-                    msg = 'Login successful'
+                    messages.success(request, 'Login Successful.')
                     return render(request, "dashboard/admin/dash/basic.html", {"form": form, "msg": msg})
             else:
-                msg = 'Invalid credentials'
+                messages.error(request, 'Wrong Username or Password ')
+                messages.error(request, form.errors)
         else:
-            msg = 'Error validating the form'
+            messages.error(request, 'second else')
     return render(request, "dashboard/admin/login-2.html", {"form": form, "msg": msg})
 

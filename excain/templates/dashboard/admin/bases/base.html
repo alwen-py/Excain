@@ -78,6 +78,11 @@
                     <a class="dropdown-item" href="../login.html"><i class="icon-fa icon-fa-sign-out"></i> Logout</a>
                 </div>
             </li>
+            {% if user.is_authenticated %}
+            {% include 'dashboard/admin/bases/messages' %}
+            {% csrf_token %}
+            {% else %}
+            {% endif %}
         </ul>
     </header>
 
@@ -333,16 +338,5 @@
 <script src="{% static '/js/core/app.js' %}"></script>
 
 <!-- END PAGE  SCRIPT -->
-{% comment %} {% for msgs in msg %}
-<script>
-{% csrf_token %} 
-swal({
-	title: "Good job!",
-	text: "You clicked the button!",
-	icon: "success",
-	button: "Aw yiss!"
-});
 
-</script> {% endcomment %}
-{% endfor %}
 </html>
