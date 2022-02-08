@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from .forms import SignUpForm, LoginForm
-
+from django.contrib import messages
 
 def login_view(request):
     form = LoginForm(request.POST or None)
@@ -14,11 +14,14 @@ def login_view(request):
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
+                messages.success(request, 'Login Successful.')
                 return redirect("/")
             else:
-                msg = 'Form is not valid'
+                messages.error(request, 'Wrong Username or Password ')
+                messages.error(request, form.errors)
+                
         else:
-            form
+            messages.error(request, 'second else')   
     return render(request, "login.html", {"form": form, "msg": msg})
 
 

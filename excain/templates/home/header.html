@@ -42,23 +42,24 @@
                     </ul>
                 </div>
                 {% if user.is_authenticated %}
-                <div class="nnavbar-option-item navbar-option-language dropdown btn main-btn btn-thirdcolor text-nowrap">
-                     <button class="dropdown-toggle" type="button" id="language2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                       <i class="flaticon-user"></i>
-                       <span class="lang-name">{{ user.username }}</span>
-                     </button>
-                    <div class="dropdown-menu language-dropdown-menu" aria-labelledby="language2">
-                        <a href="/" class="dropdown-item" href="#">
-                          <li>Profile</li>
-                        </a>
-                        <a  href="/" class="dropdown-item" href="#">
-                          <li>Change Password</li>
-                        </a>
-                        <a  href="/logout/" class="dropdown-item" href="#">
-                          <li>Logout</li>
-                        </a>
+                    {% include 'home/messages.html' %}
+                    <div class="nnavbar-option-item navbar-option-language dropdown btn main-btn btn-thirdcolor text-nowrap">
+                        <button class="dropdown-toggle" type="button" id="language2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="flaticon-user"></i>
+                        <span class="lang-name">{{ user.username }}</span>
+                        </button>
+                        <div class="dropdown-menu language-dropdown-menu" aria-labelledby="language2">
+                            <a href="/" class="dropdown-item" href="#">
+                            <li>Profile</li>
+                            </a>
+                            <a  href="/" class="dropdown-item" href="#">
+                            <li>Change Password</li>
+                            </a>
+                            <a  href="/logout/" class="dropdown-item" href="#">
+                            <li>Logout</li>
+                            </a>
+                        </div>
                     </div>
-                </div>
                 {% else %}
                 <div class="navbar-option">
                     <div class="navbar-option-item navbar-option-authentication">

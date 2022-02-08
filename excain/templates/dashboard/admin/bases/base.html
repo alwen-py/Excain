@@ -333,11 +333,16 @@
 <script src="{% static '/js/core/app.js' %}"></script>
 
 <!-- END PAGE  SCRIPT -->
-{% for msgs in msg %}
+{% comment %} {% for msgs in msg %}
 <script>
+{% csrf_token %} 
+swal({
+	title: "Good job!",
+	text: "You clicked the button!",
+	icon: "success",
+	button: "Aw yiss!"
+});
 
-    swal({{'msgs'}});
-
-</script>
+</script> {% endcomment %}
 {% endfor %}
 </html>

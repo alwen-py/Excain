@@ -51,8 +51,9 @@
 <script src="{% static '/plugins/Chartjs/Chart.js' %}"></script>
 <script src="{% static '/js/core/app.js' %}"></script>
 </main>
+
 {% endblock content %}
 {% block javascripts %}
-
+{% csrf_token %}
 {% endblock javascripts %}
 

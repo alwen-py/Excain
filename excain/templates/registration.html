@@ -152,5 +152,12 @@
             </div>
         </div>
     </section>
-{% endblock content %}
+{% comment %} {% endblock content %}
+{% for msg in messages %}
+<script>
+{% csrf_token %} 
+swal({{msg}});
+
+</script> {% endcomment %}
+{% endfor %}
 {% block javascipts %}{% endblock javascipts %}

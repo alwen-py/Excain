@@ -9,5 +9,5 @@ urlpatterns = [
     path('dashboard/',dashboard, name="dash"),
     path('dashlogin/', login_view, name="dashlogin"),
     path("users",users, name="users"),
-    path("layouts",layouts, name="layouts")  
+    path("layouts",layouts, name="layouts"),
 ]
