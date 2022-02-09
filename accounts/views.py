@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from .forms import SignUpForm, LoginForm
 from django.contrib import messages
+from django.contrib.auth import views as auth_views
 
 def login_view(request):
     form = LoginForm(request.POST or None)
