@@ -12,5 +12,7 @@ urlpatterns = [
     path('login/', login_view, name="login"),
     path("logout/", LogoutView.as_view(), name="logout"),
     path("register/", views.register_request, name="register"),
-    path("changepassword/",auth_views.PasswordChangeView.as_view(template_name='home/password_change.html'),name="password_change")
+    path('change-password/',MyPasswordChangeView.as_view(),name='password-change-view'),
+     path('change-password/done',MyPasswordResetDoneView.as_view(),name='password-change-view')
+    
 ]

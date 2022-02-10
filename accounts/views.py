@@ -1,9 +1,18 @@
+
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from .forms import SignUpForm, LoginForm
 from django.contrib import messages
-from django.contrib.auth import views as auth_views
+from django.contrib.auth.views import PasswordChangeView,PasswordResetDoneView
+from django.urls import reverse_lazy
 
+class MyPasswordChangeView(PasswordChangeView):
+    template_name= 'home/password_change.html'
+    success_url=reverse_lazy()
+    
+class MyPasswordResetDoneView(PasswordResetDoneView):
+    template_name='home/password_change_done.html'
+     
 def login_view(request):
     form = LoginForm(request.POST or None)
     msg = "Invalid"
@@ -79,18 +88,7 @@ def register_request(request):
 # def pages(request):
 #     context = {}
 #     # All resource paths end in .html.
-#     # Pick out the html file name from the url. And load that template.
-#     try:
-
-#         load_template = request.path.split('/')[-1]
-
-#         if load_template == 'admin':
-#             return HttpResponseRedirect(reverse('admin:index'))
-#         context['segment'] = load_template
-
-#         html_template = loader.get_template('home/' + load_template)
-#         return HttpResponse(html_template.render(context, request))
-
+#     # Pick out the html file name fro
 #     except template.TemplateDoesNotExist:
 
 #         html_template = loader.get_template('home/page-404.html')
