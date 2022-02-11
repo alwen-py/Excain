@@ -1,19 +1,26 @@
-from audioop import reverse
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from .forms import SignUpForm, LoginForm
-from django.contrib import *
-from django.contrib.auth.views import PasswordChangeView,PasswordResetDoneView
-from django.urls import reverse_lazy
+from django.contrib.auth import update_session_auth_hash
+from django.contrib.auth.forms import *
 from django.contrib import messages
-class MyPasswordChangeView(PasswordChangeView):
-    template_name= 'home/password_change.html'
-    def get_success_url(self):
-        return reverse('/',name='pswrdchange')
-    
-class MyPasswordResetDoneView(PasswordResetDoneView):
-    template_name='home/password_change_done.html'
-     
+
+def change_password(request):
+    if request.method == 'POST':
+        form = PasswordChangeForm(request.user, request.POST)
+        if form.is_valid():
+            user = form.save()
+            update_session_auth_hash(request, user)
+            messages.success(request, 'Your password was successfully updated!')
+            return redirect('/')
+        else:
+            messages.error(request, 'Please correct the error below.')
+    else:
+        form = PasswordChangeForm(request.user)
+    return render(request, 'home/password_change.html', {
+        'form': form
+    })   
+       
 def login_view(request):
     form = LoginForm(request.POST or None)
     msg = "Invalid"
