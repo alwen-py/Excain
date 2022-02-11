@@ -54,8 +54,8 @@
                                         long, contain upper and lower case letters, contain numbers, contain symbols
                                         like !
                                         " ? $ % ^ & ).</p>
-                                    <button class="btn main-btn full-width mb-20" name="register"
-                                        type="submit">REGISTER NOW</button>
+                                    <button class="btn main-btn full-width mb-20" name="register" type="submit">REGISTER
+                                        NOW</button>
 
                                     <div class="authentication-account-access">
                                         <div class="authentication-account-access-item">
@@ -112,52 +112,46 @@
 </section>
 
 <section class="become-section pb-100">
-        <div class="container">
-            <div class="bg-main become-section-box">
-                <div class="become-section-shapes">
-                    <div class="become-section-shape-item">
-                        <img src="../../excain/static/images/shapes/become-section-curve-line.png" alt="shape">
+    <div class="container">
+        <div class="bg-main become-section-box">
+            <div class="become-section-shapes">
+                <div class="become-section-shape-item">
+                    <img src="../../excain/static/images/shapes/become-section-curve-line.png" alt="shape">
+                </div>
+            </div>
+            <div class="become-animate-items">
+                <div class="become-animate-item animation-tab-none">
+                    <img src="../../excain/static/images/shapes/animate-shape-2.png" alt="shape">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-lg-5 pb-50 mobile-pb-30">
+                    <div class="section-title section-title-white section-title-left">
+                        <h2>Join As Teacher Or Student</h2>
+                        <p>Minim veniam, quis nostrud exercitation ullamco laboris nisi ut henderit in
+                            magnam
+                            aliquam quaerat voluptatem</p>
+                    </div>
+                    <div class="section-button-group">
+                        <div class="section-button-item">
+                            <a href="become-a-teacher.html" class="btn main-btn btn-white">BECOME A
+                                TEACHER <i class="flaticon-edit"></i></a>
+                        </div>
+                        <div class="section-button-item">
+                            <a href="become-a-teacher.html" class="btn main-btn btn-white">BECOME A
+                                STUDENT <i class="flaticon-edit"></i></a>
+                        </div>
                     </div>
                 </div>
-                <div class="become-animate-items">
-                    <div class="become-animate-item animation-tab-none">
-                        <img src="../../excain/static/images/shapes/animate-shape-2.png" alt="shape">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12 col-lg-5 pb-50 mobile-pb-30">
-                        <div class="section-title section-title-white section-title-left">
-                            <h2>Join As Teacher Or Student</h2>
-                            <p>Minim veniam, quis nostrud exercitation ullamco laboris nisi ut henderit in
-                                magnam
-                                aliquam quaerat voluptatem</p>
-                        </div>
-                        <div class="section-button-group">
-                            <div class="section-button-item">
-                                <a href="become-a-teacher.html" class="btn main-btn btn-white">BECOME A
-                                    TEACHER <i class="flaticon-edit"></i></a>
-                            </div>
-                            <div class="section-button-item">
-                                <a href="become-a-teacher.html" class="btn main-btn btn-white">BECOME A
-                                    STUDENT <i class="flaticon-edit"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-lg-6 offset-lg-1 position-relative">
-                        <div class="image-position image-position-rb text-center">
-                            <img src="../../excain/static/images/header-screenshot.png" alt="screenshot">
-                        </div>
+                <div class="col-12 col-lg-6 offset-lg-1 position-relative">
+                    <div class="image-position image-position-rb text-center">
+                        <img src="../../excain/static/images/header-screenshot.png" alt="screenshot">
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-{% comment %} {% endblock content %}
-{% for msg in messages %}
-<script>
-{% csrf_token %} 
-swal({{msg}});
+    </div>
+</section>
+{% endblock content %}
 
-</script> {% endcomment %}
-{% endfor %}
 {% block javascipts %}{% endblock javascipts %}

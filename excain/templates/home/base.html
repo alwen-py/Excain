@@ -16,25 +16,15 @@
     <link rel="manifest" href="{% static '/img/favicon/site.webmanifest' %}">
     <link rel="mask-icon" href="{% static '/img/favicon/safari-pinned-tab.svg' %}" color="#ffffff">
     <title> Excain | {% block title %}{% endblock title %}</title>
-<!--    <link rel="icon" href="{% static '/images/excain-logo.png' %}" type="image/png" sizes="16x16">-->
     {% block stylesheets %}{% endblock stylesheets %}
     {% include 'home/style.html' %}
-    <style>
-      .navbar-area-three .mean-container a.meanmenu-reveal span {
-          background-color: #f07739;
-      }
-      .navbar-area-three .mean-container a.meanmenu-reveal {
-          color: #dd0f0f;
-      }
-    </style>
+
 </head>
 <body>
 {% include 'home/header.html' %}
 {% block content %}{% endblock content %}
 {% include 'home/footer.html' %}
 </body>
-
 {% block javascripts %}{% endblock javascripts %}
 {% include 'home/scripts.html' %}
-
 </html>
