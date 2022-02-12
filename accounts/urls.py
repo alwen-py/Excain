@@ -5,7 +5,6 @@ from accounts import views
 from .views import *
 from django.conf.urls import url
 
-
 urlpatterns = [
     path('login/', login_view, name="login"),
     path("logout/", LogoutView.as_view(), name="logout"),

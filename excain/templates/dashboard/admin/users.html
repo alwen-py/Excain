@@ -9,15 +9,17 @@
     <div id="app" class="site-wrapper">
         <header class="site-header">
             <a href="#" class="brand-main">
-                <img src="{% static '/global/img/logo-desk.png' %}" id="logo-desk" alt="Laraspace Logo" class="hidden-sm-down">
-                <img src="{% static '/global/img/logo-mobile.png' %}" id="logo-mobile" alt="Laraspace Logo" class="hidden-md-up">
+                <img src="{% static '/global/img/logo-desk.png' %}" id="logo-desk" alt="Laraspace Logo"
+                    class="hidden-sm-down">
+                <img src="{% static '/global/img/logo-mobile.png' %}" id="logo-mobile" alt="Laraspace Logo"
+                    class="hidden-md-up">
             </a>
             <a href="#" class="nav-toggle">
                 <div class="hamburger hamburger--htla">
                     <span>toggle menu</span>
                 </div>
             </a>
-    
+
             <ul class="action-list">
                 <li>
                     <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
@@ -34,8 +36,10 @@
                             class="icon-fa icon-fa-bell"></i></a>
                     <div class="dropdown-menu dropdown-menu-right notification-dropdown">
                         <h6 class="dropdown-header">Notifications</h6>
-                        <a class="dropdown-item" href="#"><i class="icon-fa icon-fa-user"></i> New User was Registered</a>
-                        <a class="dropdown-item" href="#"><i class="icon-fa icon-fa-comment"></i> A Comment has been posted.</a>
+                        <a class="dropdown-item" href="#"><i class="icon-fa icon-fa-user"></i> New User was
+                            Registered</a>
+                        <a class="dropdown-item" href="#"><i class="icon-fa icon-fa-comment"></i> A Comment has been
+                            posted.</a>
                     </div>
                 </li>
                 <li>
@@ -43,15 +47,16 @@
                             src="{% static '/global/img/avatars/avatar.png' %}" alt="Avatar"></a>
                     <div class="dropdown-menu dropdown-menu-right notification-dropdown">
                         <a class="dropdown-item" href="settings.html"><i class="icon-fa icon-fa-cogs"></i> Settings</a>
-                        <a class="dropdown-item" href="../login.html"><i class="icon-fa icon-fa-sign-out"></i> Logout</a>
+                        <a class="dropdown-item" href="../login.html"><i class="icon-fa icon-fa-sign-out"></i>
+                            Logout</a>
                     </div>
                 </li>
             </ul>
         </header>
-        
+
         {% include 'dashboard/admin/bases/sidebar.html' %}
-    
-    
+
+
         <div class="main-content">
             <div class="page-header">
                 <h3 class="page-title">Users</h3>
@@ -70,46 +75,36 @@
                     <div class="card">
                         <div class="card-header">
                             <h6>All Users</h6>
-    
+
                             <div class="card-actions">
-    
+
                             </div>
                         </div>
                         <div class="card-block">
                             <table id="users-datatable" class="table table-striped table-bordered" cellspacing="0"
-                                   width="100%">
+                                width="100%">
                                 <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Role</th>
-                                    <th>Registered On</th>
-                                    <th>Actions</th>
-                                </tr>
+                                    <tr>
+                                        <th>Username</th>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Email</th>
+                                        <th>Action</th>
+                                    </tr>
                                 </thead>
-                                <tr>
-                                    <td>Shane White</td>
-                                    <td>raish111hd@gmail.com</td>
-                                    <td>user</td>
-                                    <td>2017-07-05 09:58:44</td>
-                                    <td><a href="users/2.html" class="btn btn-default btn-sm"><i
-                                            class="icon-fa icon-fa-search"></i> View</a>
-                                        <a href="users/2.html" class="btn btn-default btn-sm"
-                                           data-token="ju0AJjtVlV2LnL9lhkK9fOpg7DhuaMFVgR1mifUv" data-delete
-                                           data-confirmation="notie"> <i class="icon-fa icon-fa-trash"></i> Delete</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Adam David</td>
-                                    <td>mohit.panjvani@gmail.com</td>
-                                    <td>user</td>
-                                    <td>2017-07-05 09:58:44</td>
-                                    <td><a href="users/3.html" class="btn btn-default btn-sm"><i
-                                            class="icon-fa icon-fa-search"></i> View</a>
-                                        <a href="users/3.html" class="btn btn-default btn-sm"
-                                           data-token="ju0AJjtVlV2LnL9lhkK9fOpg7DhuaMFVgR1mifUv" data-delete
-                                           data-confirmation="notie"> <i class="icon-fa icon-fa-trash"></i> Delete</a></td>
-                                </tr>
                                 <tbody>
+                                    {% for object in object_list %}
+                                    <tr>
+                                        <td>{{ object.username}}</td>
+                                        <td>{{ object.firstname }}</td>
+                                        <td>{{ object.lastname }}</td>
+                                        <td>{{ object.email }}</td>
+                                        <td>
+                                            <a href="/admin/edit_member/{{ object.pk }}/" class="btn btn-default btn-sm"><i class="icon-fa icon-fa-pencil"></i>Edit</a>
+                                            <a href="/admin/delete_member/" class="btn btn-default btn-sm" data-id="{{ object.id }}" data-delete data-confirmation="notie"> <i class="icon-fa icon-fa-trash"></i>Delete </a>
+                                            </td>
+                                    </tr>
+                                    {% endfor %}
                                 </tbody>
                             </table>
                         </div>
@@ -117,61 +112,63 @@
                 </div>
             </div>
         </div>
-    
-        <footer class="site-footer">
-            <div class="text-right">
-                Powered by <a href="http://bytefury.com/" target="_blank">Bytefury</a>
+    </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="text-right">
+            Powered by <a href="http://bytefury.com/" target="_blank">Bytefury</a>
+        </div>
+    </footer>
+    <div class="skin-tools">
+        <a class="skin-tools-action">
+            <i class="icon-fa icon-fa-cog"></i>
+        </a>
+        <div class="skin-tools-content">
+            <h5 class="mt-2">Select Skin</h5>
+            <div class="row mt-md-4">
+                <div class="col-sm-6 skin-item">
+                    <a href="#" class="skin-radio active" data-skin="default" title="Skin - Default">
+                        <img src="{% static '/global/img/skins/skin-default.png' %}" class="img-fluid">
+                    </a>
+                </div>
+                <div class="col-sm-6 skin-item">
+                    <a href="#" class="skin-radio" data-skin="tyrell" data-logo="white" title="Skin - Tyrell">
+                        <img src="{% static '/global/img/skins/skin-tyrell.png' %}" class="img-fluid">
+                    </a>
+                </div>
             </div>
-        </footer>
-        <div class="skin-tools">
-            <a class="skin-tools-action">
-                <i class="icon-fa icon-fa-cog"></i>
-            </a>
-            <div class="skin-tools-content">
-                <h5 class="mt-2">Select Skin</h5>
-                <div class="row mt-md-4">
-                    <div class="col-sm-6 skin-item">
-                        <a href="#" class="skin-radio active" data-skin="default" title="Skin - Default">
-                            <img src="{% static '/global/img/skins/skin-default.png' %}" class="img-fluid">
-                        </a>
-                    </div>
-                    <div class="col-sm-6 skin-item">
-                        <a href="#" class="skin-radio" data-skin="tyrell" data-logo="white" title="Skin - Tyrell">
-                            <img src="{% static '/global/img/skins/skin-tyrell.png' %}" class="img-fluid">
-                        </a>
-                    </div>
+            <div class="row mt-md-4">
+                <div class="col-sm-6 skin-item">
+                    <a href="#" class="skin-radio" data-skin="arryn" data-logo="white" title="Skin - Arryn">
+                        <img src="{% static '/global/img/skins/skin-arryn.png' %}" class="img-fluid">
+                    </a>
                 </div>
-                <div class="row mt-md-4">
-                    <div class="col-sm-6 skin-item">
-                        <a href="#" class="skin-radio" data-skin="arryn" data-logo="white" title="Skin - Arryn">
-                            <img src="{% static '/global/img/skins/skin-arryn.png' %}" class="img-fluid">
-                        </a>
-                    </div>
-                    <div class="col-sm-6 skin-item">
-                        <a href="#" class="skin-radio" data-skin="lannister" data-logo="white" title="Skin - Lannister">
-                            <img src="{% static '/global/img/skins/skin-lannister.png' %}" class="img-fluid">
-                        </a>
-                    </div>
+                <div class="col-sm-6 skin-item">
+                    <a href="#" class="skin-radio" data-skin="lannister" data-logo="white" title="Skin - Lannister">
+                        <img src="{% static '/global/img/skins/skin-lannister.png' %}" class="img-fluid">
+                    </a>
                 </div>
-                <div class="row mt-md-4">
-                    <div class="col-sm-6 skin-item">
-                        <a href="#" class="skin-radio" data-skin="stark" title="Skin - Stark">
-                            <img src="{% static '/global/img/skins/skin-stark.png' %}" class="img-fluid">
-                        </a>
-                    </div>
-                    <div class="col-sm-6 skin-item">
-                        <a href="#" class="skin-radio" data-skin="targaryen" title="Skin - Targaryen">
-                            <img src="{% static '/global/img/skins/skin-targaryen.png' %}" class="img-fluid">
-                        </a>
-                    </div>
+            </div>
+            <div class="row mt-md-4">
+                <div class="col-sm-6 skin-item">
+                    <a href="#" class="skin-radio" data-skin="stark" title="Skin - Stark">
+                        <img src="{% static '/global/img/skins/skin-stark.png' %}" class="img-fluid">
+                    </a>
+                </div>
+                <div class="col-sm-6 skin-item">
+                    <a href="#" class="skin-radio" data-skin="targaryen" title="Skin - Targaryen">
+                        <img src="{% static '/global/img/skins/skin-targaryen.png' %}" class="img-fluid">
+                    </a>
                 </div>
             </div>
         </div>
     </div>
-    
-    
+    </div>
 
-<script src="{% static '/pages/users/users.js' %}"></script>
+
+
+    <script src="{% static '/pages/users/users.js' %}"></script>
 </main>
 {% endblock content %}
 {% block javascripts %}
