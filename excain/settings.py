@@ -145,7 +145,8 @@ STATICFILES_DIRS = (
 )
 
 LOGOUT_REDIRECT_URL = '/'
-
+ADMIN_LOGIN_URL = "/admin/login/"
+ADMIN_LOGIN_REDIRECT_URL = '/admin/'
 
 
 # Default primary key field type

@@ -1,17 +1,16 @@
 {% extends 'dashboard/admin/bases/base.html' %}
 {% load static %}
 {% block title %}Login{% endblock title %}
-{% block stylesheets %}{% endblock stylesheets %}
 {% block content %}
-
+</br></br>
 <main class="login-page login-2">
-<div id="app" class="login-wrapper">
+  <div id="app" class="login-wrapper">
     <div class="login-box">
         {% include 'dashboard/admin/bases/messages.html' %}
         <div class="logo-main">
-            <a href="../index.html"><img src="{% static '/global/img/logo-login.png' %}" alt="Laraspace Logo"></a>
+            <a href="/"><img src="{% static '/images/excain-logo.png' %}" alt="excain Logo"></a>
         </div>
-        <form action="/dashlogin/" id="loginForm" method="POST">
+        <form action="/admin/login/" id="loginForm" method="POST">
             {% csrf_token %}
             <div class="form-group mb-20">
                 <div class="input-group">
@@ -41,20 +40,7 @@
             </div>
             <button class="btn btn-theme btn-full" type="submit">Login</button>
         </form>
-        <div class="page-copyright">
-            <p>Powered by <a href="http://bytefury.com/" target="_blank">Bytefury</a></p>
-            <p>Laraspace © 2017</p>
-        </div>
     </div>
 </div>
-<script src="{% static '/pages/sessions/login.js' %}"></script>
-
-<script src="{% static '/plugins/Chartjs/Chart.js' %}"></script>
-<script src="{% static '/js/core/app.js' %}"></script>
 </main>
-
 {% endblock content %}
-{% block javascripts %}
-{% csrf_token %}
-{% endblock javascripts %}
-

@@ -1,8 +1,7 @@
-{% csrf_token %}
 <!DOCTYPE html>
 <html>
 <head>
-{% load static %}
+    {% load static %}
     <meta charset="utf-8">
     <title>Excain Admin {% block title %}{% endblock title %}</title>
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
@@ -10,10 +9,8 @@
     <!-- START CORE CSS-->
     <link href="{% static '/global/css/laraspace.css' %}" rel="stylesheet" type="text/css">
     <!-- END CORE CSS -->
-
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="csrf-token" content="ju0AJjtVlV2LnL9lhkK9fOpg7DhuaMFVgR1mifUv">
-
     <link rel="apple-touch-icon" sizes="57x57" href="{% static '/img/favicons/apple-touch-icon-57x57.png' %}">
     <link rel="apple-touch-icon" sizes="60x60" href="{% static '/global/img/favicons/apple-touch-icon-60x60.png' %}">
     <link rel="apple-touch-icon" sizes="72x72" href="{% static '/global/img/favicons/apple-touch-icon-72x72.png' %}">
@@ -37,78 +34,26 @@
     <meta name="theme-color" content="#333333">
     {% block stylesheets %}{% endblock stylesheets %}
 </head>
-{% block content %}
-<body class="layout-default skin-default">
-   
-    {% include 'dashboard/admin/bases/header.html' %}
-
-
-   
-
-    <footer class="site-footer">
-        <div class="text-right">
-            Powered by <a href="http://bytefury.com/" target="_blank">Bytefury</a>
-        </div>
-    </footer>
-    <div class="skin-tools">
-        <a class="skin-tools-action">
-            <i class="icon-fa icon-fa-cog"></i>
-        </a>
-        <div class="skin-tools-content">
-            <h5 class="mt-2">Select Skin</h5>
-            <div class="row mt-md-4">
-                <div class="col-sm-6 skin-item">
-                    <a href="#" class="skin-radio active" data-skin="default" title="Skin - Default">
-                        <img src="{% static '/global/img/skins/skin-default.png' %}" class="img-fluid">
-                    </a>
-                </div>
-                <div class="col-sm-6 skin-item">
-                    <a href="#" class="skin-radio" data-skin="tyrell" data-logo="white" title="Skin - Tyrell">
-                        <img src="{% static '/global/img/skins/skin-tyrell.png' %}" class="img-fluid">
-                    </a>
-                </div>
-            </div>
-            <div class="row mt-md-4">
-                <div class="col-sm-6 skin-item">
-                    <a href="#" class="skin-radio" data-skin="arryn" data-logo="white" title="Skin - Arryn">
-                        <img src="{% static '/global/img/skins/skin-arryn.png' %}" class="img-fluid">
-                    </a>
-                </div>
-                <div class="col-sm-6 skin-item">
-                    <a href="#" class="skin-radio" data-skin="lannister" data-logo="white" title="Skin - Lannister">
-                        <img src="{% static '/global/img/skins/skin-lannister.png' %}" class="img-fluid">
-                    </a>
-                </div>
-            </div>
-            <div class="row mt-md-4">
-                <div class="col-sm-6 skin-item">
-                    <a href="#" class="skin-radio" data-skin="stark" title="Skin - Stark">
-                        <img src="{% static '/global/img/skins/skin-stark.png' %}" class="img-fluid">
-                    </a>
-                </div>
-                <div class="col-sm-6 skin-item">
-                    <a href="#" class="skin-radio" data-skin="targaryen" title="Skin - Targaryen">
-                        <img src="{% static '/global/img/skins/skin-targaryen.png' %}" class="img-fluid">
-                    </a>
-                </div>
-            </div>
-        </div>
+<body>
+{% if user.is_authenticated %}
+  {% include 'dashboard/admin/bases/header.html' %}
+{% endif %}
+{% block content %}{% endblock content %}
+{% if user.is_authenticated %}
+<footer class="site-footer">
+    <div class="text-right">
+        Made with love by <a href="/" target="_blank">Dragunor</a>
     </div>
-</div>
-{% endblock content %}
-
-
+</footer>
+{% endif %}
 </body>
-{% block javascripts %}{% endblock javascripts %}
 <!-- START GLOBAL  SCRIPT -->
 <script src="{% static '/global/js/core/plugins.js' %}"></script>
-<script src="{% static '/global/js/demo/skintools.js' %}"></script>
 <!-- END GLOBAL  SCRIPT -->
 
 <!-- START PAGE  SCRIPT -->
 <script src="{% static '/plugins/Chartjs/Chart.js' %}"></script>
-<script src="{% static '/js/core/app.js' %}"></script>
-
+<script src="{% static '/global/js/core/app.js' %}"></script>
 <!-- END PAGE  SCRIPT -->
-
+{% block javascripts %}{% endblock javascripts %}
 </html>

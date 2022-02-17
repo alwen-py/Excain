@@ -1,9 +1,7 @@
 {% load static %}
-
-<div id="app" class="site-wrapper">
-    <header class="site-header">
+ <header class="site-header">
         <a href="#" class="brand-main">
-            <img src="{% static '/global/img/logo-desk.png' %}" id="logo-desk" alt="Laraspace Logo"
+            <img src="{% static '/images/excain-logo.png' %}" id="logo-desk" alt="Laraspace Logo"
                 class="hidden-sm-down">
             <img src="{% static '/global/img/logo-mobile.png' %}" id="logo-mobile" alt="Laraspace Logo"
                 class="hidden-md-up">
@@ -13,7 +11,6 @@
                 <span>toggle menu</span>
             </div>
         </a>
-
         <ul class="action-list">
             <li>
                 <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
@@ -40,9 +37,9 @@
                         src="{% static 'global/img/avatars/avatar.png' %}" alt="Avatar"></a>
                 <div class="dropdown-menu dropdown-menu-right notification-dropdown">
                     <a class="dropdown-item" href="../settings.html"><i class="icon-fa icon-fa-cogs"></i> Settings</a>
-                    <a class="dropdown-item" href="/change-dash-password"><i class="icon-fa icon-fa-cogs"></i> Change
+                    <a class="dropdown-item" href="/admin/change-password"><i class="icon-fa icon-fa-cogs"></i> Change
                         Password</a>
-                    <a class="dropdown-item" href="/dashlogin"><i class="icon-fa icon-fa-sign-out"></i> Logout</a>
+                    <a class="dropdown-item" href="/logout/"><i class="icon-fa icon-fa-sign-out"></i> Logout</a>
                 </div>
             </li>
         </ul>
@@ -50,25 +47,25 @@
     <div class="mobile-menu-overlay"></div>
     <div class="sidebar-left " id="mobile-nav">
         <div class="sidebar-body scroll-pane">
-            <ul class="side-nav metismenu" id="menu">
+            <ul class="side-nav metismenu">
                 <li class="">
-                    <a href="#"><i class="icon-fa icon-fa-user"></i> Users <span
-                            class="icon-fa arrow icon-fa-fw"></span> </a>
-                    <ul aria-expanded="true" class="collapse">
-                        <li class="">
-                            <a href="/users">All Users</a>
-                        </li>
-                        <li class="">
-                            <a href="../users/1.html">User Profile</a>
-                        </li>
-                    </ul>
+                    <a href="/admin/"><i class="icon-fa icon-fa-dashboard"></i> Dashboard </a>
+                </li>
+            </ul>
+            <ul class="side-nav metismenu">
+                <li class="">
+                    <a href="/admin/users/"><i class="icon-fa icon-fa-user"></i> Users </a>
+                </li>
+            </ul>
+            <ul class="side-nav metismenu">
+                <li class="">
+                    <a href="/admin/users/"><i class="icon-fa icon-fa-comment"></i> People Reach </a>
+                </li>
+            </ul>
+            <ul class="side-nav metismenu">
+                <li class="">
+                    <a href="/admin/users/"><i class="icon-fa icon-fa-book"></i> Courses </a>
                 </li>
             </ul>
         </div>
     </div>
-</div>
-
-<script src="{% static '/global/js/core/plugins.js' %}"></script>
-<script src="{% static '/global/js/demo/skintools.js' %}"></script>
-<script src="{% static '/plugins/Chartjs/Chart.js' %}"></script>
-<script src="{% static '/js/core/app.js' %}"></script>

@@ -1,15 +1,13 @@
 from django.urls import path
-import dashboard
+from excain.settings import ADMIN_LOGIN_URL
 from .views import *
-from dashboard import views
 from django.conf.urls import url
 
 
 urlpatterns = [
-    path('dashboard/',dashboard, name="dash"),
-    path('dashlogin/', login_view, name="dashlogin"),
-    path("users",UserListView.as_view(), name="users"),
-    path("layouts",layouts, name="layouts"),
-    url('change-dash-password',views.change_password, name='change_password'),   
-
+    path('login/', login_view, name="admin-login"),
+    path('', login_required(dashboard, login_url=ADMIN_LOGIN_URL)),
+    path("users/", login_required(UserListView.as_view(), login_url=ADMIN_LOGIN_URL), name="users"),
+    path("layouts/", login_required(layouts, login_url=ADMIN_LOGIN_URL), name="layouts"),
+    url('change-password/', login_required(change_password, login_url=ADMIN_LOGIN_URL),)
 ]
