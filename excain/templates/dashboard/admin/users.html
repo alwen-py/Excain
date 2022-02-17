@@ -7,7 +7,6 @@
 <main class="layout-default skin-default">
 
     <div id="app" class="site-wrapper">
-        <header class="site-header">
             <a href="#" class="brand-main">
                 <img src="{% static '/global/img/logo-desk.png' %}" id="logo-desk" alt="Laraspace Logo"
                     class="hidden-sm-down">
@@ -52,9 +51,9 @@
                     </div>
                 </li>
             </ul>
-        </header>
+        </header> 
 
-        {% include 'dashboard/admin/bases/sidebar.html' %}
+        {% include 'dashboard/admin/bases/header.html' %}
 
 
         <div class="main-content">
