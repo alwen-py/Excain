@@ -13,6 +13,10 @@ def dashboard(request):
     return render(request, 'dashboard/admin/dash/basic.html')
 
 
+def form(request):
+    return render(request, 'dashboard/admin/forms/layouts.html')
+
+
 def dashlogin(request):
     return render(request, 'dashboard/admin/login-2.html')
 
