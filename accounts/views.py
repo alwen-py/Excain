@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
-from .forms import SignUpForm, LoginForm
+from .forms import SignUpForm, LoginForm, ContactForm
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.forms import *
 from django.contrib import messages
@@ -11,7 +11,8 @@ def change_password(request):
         if form.is_valid():
             user = form.save()
             update_session_auth_hash(request, user)
-            messages.success(request, 'Your password was successfully updated!')
+            messages.success(
+                request, 'Your password was successfully updated!')
             return redirect('/')
         else:
             messages.error(request, 'Please correct the error below.')
@@ -19,14 +20,18 @@ def change_password(request):
         form = PasswordChangeForm(request.user)
     return render(request, 'home/password_change.html', {
         'form': form
-    })   
-       
+    })
+
+def contact_view(request):
+    contactform = ContactForm()
+    context = {'contactform': contactform}
+    return render(request, 'contact-us.html', context)
+
 def login_view(request):
     form = LoginForm(request.POST or None)
     msg = "Invalid"
     if request.method == "POST":
         if form.is_valid():
-            print(form)
             username = form.cleaned_data.get("username")
             password = form.cleaned_data.get("password")
             user = authenticate(username=username, password=password)
@@ -37,10 +42,11 @@ def login_view(request):
             else:
                 messages.error(request, 'Wrong Username or Password ')
                 messages.error(request, form.errors)
-                
+
         else:
-            messages.error(request, 'second else')   
+            messages.error(request, 'second else')
     return render(request, "login.html", {"form": form, "msg": msg})
+
 
 def register_request(request):
     msg = None
@@ -59,4 +65,4 @@ def register_request(request):
             msg = 'Form is not valid'
     else:
         form = SignUpForm()
-    return render(request,"registration.html", {"form": form, "msg": msg, "success": success})
+    return render(request, "registration.html", {"form": form, "msg": msg, "success": success})
