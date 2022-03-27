@@ -1,11 +1,6 @@
-import email
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-
-
-# Create your forms here.
-
 class SignUpForm(UserCreationForm):
     username = forms.CharField(
         widget=forms.TextInput(
@@ -67,7 +62,13 @@ class LoginForm(forms.Form):
 
 class ContactForm(forms.Form):
     name = forms.CharField(max_length=50)
-    email = forms.EmailField(max_length=150)
+    email = forms.EmailField(
+        widget=forms.EmailInput(
+            attrs={
+                "placeholder": "Email",
+                "class": "form-control"
+            }
+        ))
     phone_number = forms.RegexField(regex=r'^\+?1?\d{9,15}$'
                                     )
     subject = forms.CharField(widget=forms.Textarea, max_length=2000)

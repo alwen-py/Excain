@@ -1,6 +1,8 @@
 from django.shortcuts import render
-
+from dashboard.models import *
 from dashboard.models import Program
+
+from django.views.generic import DetailView
 
 
 def index(request):
@@ -21,4 +23,21 @@ def contactus(request):
 def aboutus(request):
 
     return render(request, 'about-us.html')
+
+
+def courses(request):
+
+    return render(request, 'courses.html')
+
+def singlecourse(request):
+
+    return render(request, 'single-course.html')
+
+
+
+def singlecourse(request):
+    program = {'program': Program.objects.all()}
+    return render(request, 'single-course.html', program)
+class CourseDetailView(DetailView):
+    model = Program
 

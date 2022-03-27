@@ -4,6 +4,7 @@ from .forms import SignUpForm, LoginForm, ContactForm
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.forms import *
 from django.contrib import messages
+from accounts import forms
 
 def change_password(request):
     if request.method == 'POST':
@@ -44,7 +45,7 @@ def login_view(request):
                 messages.error(request, form.errors)
 
         else:
-            messages.error(request, 'second else')
+            messages.error(request)
     return render(request, "login.html", {"form": form, "msg": msg})
 
 
