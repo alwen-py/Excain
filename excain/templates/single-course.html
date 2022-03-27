@@ -104,14 +104,14 @@
                                 data-summery-info-details="1">
                                 <div class="summery-info-details-inner">
                                     <h3>Course Description</h3>
-                                    <a href="{% url 'singlecourse' course.id %}"></a>
-                                    {% for i in program  %}
-                                    <p>{{i.description}}</p>
-                                    <h4>Requirements:</h4>
-                                    {% endfor %}
+                                    <a href="{% url 'single-course' %}"></a>
+                                    
+                                    <p>
+                                    </p>
+                                    <h4>{{program.description}}</h4>
+                                  
                                     <ul>
-                                        <li><i class="flaticon-check"></i> Sed ut perspiciatis unde omnis iste natus
-                                            error sit</li>
+                                        <li><i class="flaticon-check"></i> {{ program.description }}</li>
                                         <li><i class="flaticon-check"></i> At vero eos et accusamus et iusto odio
                                             dignissimos ducimus</li>
                                         <li><i class="flaticon-check"></i> Itaque earum rerum hic tenetur a sapiente

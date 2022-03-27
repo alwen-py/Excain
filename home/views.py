@@ -36,8 +36,7 @@ def singlecourse(request):
 
 
 def singlecourse(request):
-    program = {'program': Program.objects.all()}
+    program = {'program': Program.description}
+    
     return render(request, 'single-course.html', program)
-class CourseDetailView(DetailView):
-    model = Program
 
