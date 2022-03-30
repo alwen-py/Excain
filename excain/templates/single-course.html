@@ -1,6 +1,6 @@
 {% extends "home/base.html" %}
 {% csrf_token %}
-{% csrf_token %}
+
 {% load static %}
 {% block title %}Courses{% endblock title %}
 {% include 'home/sheets.html' %}
@@ -11,7 +11,7 @@
         <div class="container">
             <div class="header-page-content desk-pad-right-30">
                 <div class="course-badge">-30%</div>
-                <h1>Mastering On Data Modeling</h1>
+                <h1>Mastering On Data Modeling</h1>description
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -104,11 +104,15 @@
                                 data-summery-info-details="1">
                                 <div class="summery-info-details-inner">
                                     <h3>Course Description</h3>
-                                    <a href="{% url 'single-course' %}"></a>
+
+                                    <a href=""></a>
                                     
                                     <p>
                                     </p>
-                                    <h4>{{program.description}}</h4>
+                                    <h4>    {{course_detail.id}}
+
+                                            {{course_id.id}}
+                                    </h4>
                                   
                                     <ul>
                                         <li><i class="flaticon-check"></i> {{ program.description }}</li>

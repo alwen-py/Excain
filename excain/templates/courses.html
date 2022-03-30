@@ -42,129 +42,33 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 col-md-6 col-lg-4 pb-30">
-                    <div class="course-card">
-                        <div class="course-card-thumb">
-                            <a href="single-course/"><img src="{% static 'images/courses/course-image-1.jpg' %}"
+                {% for object in program %}
+                <div class="col-12 col-lg-6 pb-30">
+                    <div class="course-card course-card-list course-card-thirdcolor">
+                        <div class="course-card-thumb course-card-thumb-thirdcolor">
+                            <a href="/course-detail/{{object.id}}"><img src="{% static '/images/shapes/course-shape-1.png' %}"
                                     alt="course"></a>
                         </div>
-                        <div class="course-card-content bg-off-white">
+                        <div class="course-card-content">
                             <ul class="course-info-list">
-                                <li><i class="flaticon-reading"></i> 23 Students</li>
-                                <li><i class="flaticon-online-learning-1"></i> 30 Lessons</li>
+                                 {% if object.certificate_available %}
+                                 <li><i class="flaticon-reading"></i>Certificate Available</li>
+                                 {% else %}
+                                 <li><i class="flaticon-reading"></i>Certificate Not Available</li>
+                                 {% endif %}
+                                <li><i class="flaticon-online-learning-1">  {{ object.duration }}  Hours</i></li>
                             </ul>
-                            <h3><a href="single-course/">Listening Skills the Ultimate Soft Skills for Beginners</a>
+                            <ul class="course-filter-list">
+                                <li class="course-filter-thirdcolor">{{ object.type }}</li>
+                                <li class="course-filter-success">Paid</li>
+                            </ul>
+                            <h3><a href="single-course.html">{{ object.name }}</a>
                             </h3>
-                            <h4 class="course-price">$56.00</h4>
+                            <h4 class="course-price">₹ {{ object.price }}</h4>
                         </div>
-                        <ul class="course-filter-list">
-                            <li class="course-filter-danger">Featured</li>
-                            <li class="course-filter-success">Free</li>
-                        </ul>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 col-lg-4 pb-30">
-                    <div class="course-card">
-                        <div class="course-card-thumb">
-                            <a href="single-course/"><img src="{% static 'images/courses/course-image-2.jpg' %}"
-                                    alt="course"></a>
-                        </div>
-                        <div class="course-card-content bg-off-white">
-                            <ul class="course-info-list">
-                                <li><i class="flaticon-reading"></i> 16 Students</li>
-                                <li><i class="flaticon-online-learning-1"></i> 45 Lessons</li>
-                            </ul>
-                            <h3><a href="single-course/">Yoga Medicine’s Guide to Therapeutic Man &amp; Woman</a>
-                            </h3>
-                            <h4 class="course-price">$100.00</h4>
-                        </div>
-                        <ul class="course-filter-list">
-                            <li class="course-filter-danger">Featured</li>
-                            <li class="course-filter-success">Free</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4 pb-30">
-                    <div class="course-card">
-                        <div class="course-card-thumb">
-                            <a href="single-course/"><img src="{% static 'images/courses/course-image-3.jpg' %}"
-                                    alt="course"></a>
-                        </div>
-                        <div class="course-card-content bg-off-white">
-                            <ul class="course-info-list">
-                                <li><i class="flaticon-reading"></i> 16 Students</li>
-                                <li><i class="flaticon-online-learning-1"></i> 45 Lessons</li>
-                            </ul>
-                            <h3><a href="single-course/">Excel Crash Course: Master Excel for Financial Analysis</a>
-                            </h3>
-                            <h4 class="course-price">$78.00</h4>
-                        </div>
-                        <ul class="course-filter-list">
-                            <li class="course-filter-danger">Featured</li>
-                            <li class="course-filter-success">-50%</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4 pb-30">
-                    <div class="course-card">
-                        <div class="course-card-thumb">
-                            <a href="single-course/"><img src="{% static 'images/courses/course-image-4.jpg' %}"
-                                    alt="course"></a>
-                        </div>
-                        <div class="course-card-content bg-off-white">
-                            <ul class="course-info-list">
-                                <li><i class="flaticon-reading"></i> 53 Students</li>
-                                <li><i class="flaticon-online-learning-1"></i> 30 Lessons</li>
-                            </ul>
-                            <h3><a href="single-course/">Artificial Intelligence: Reinforcement Learning</a></h3>
-                            <h4 class="course-price">$35.00</h4>
-                        </div>
-                        <ul class="course-filter-list">
-                            <li class="course-filter-danger">Featured</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4 pb-30">
-                    <div class="course-card">
-                        <div class="course-card-thumb">
-                            <a href="single-course/"><img src="{% static 'images/courses/course-image-5.jpg' %}"
-                                    alt="course"></a>
-                        </div>
-                        <div class="course-card-content bg-off-white">
-                            <ul class="course-info-list">
-                                <li><i class="flaticon-reading"></i> 23 Students</li>
-                                <li><i class="flaticon-online-learning-1"></i> 30 Lessons</li>
-                            </ul>
-                            <h3><a href="single-course/">Mastering on Data Modeling Fundamentals Course</a></h3>
-                            <h4 class="course-price">$56.00</h4>
-                        </div>
-                        <ul class="course-filter-list">
-                            <li class="course-filter-danger">Featured</li>
-                            <li class="course-filter-success">-30%</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4 pb-30">
-                    <div class="course-card">
-                        <div class="course-card-thumb">
-                            <a href="single-course/"><img src="{% static 'images/courses/course-image-6.jpg' %}"
-                                    alt="course"></a>
-                        </div>
-                        <div class="course-card-content bg-off-white">
-                            <ul class="course-info-list">
-                                <li><i class="flaticon-reading"></i> 27 Students</li>
-                                <li><i class="flaticon-online-learning-1"></i> 35 Lessons</li>
-                            </ul>
-                            <h3><a href="single-course/">Cryptocurrency Trading Course 2020: Achieve Wins Daily!</a>
-                            </h3>
-                            <h4 class="course-price">$77.00</h4>
-                        </div>
-                        <ul class="course-filter-list">
-                            <li class="course-filter-danger">Featured</li>
-                            <li class="course-filter-focus">-90%</li>
-                        </ul>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
             <nav aria-label="Page navigation example" class="page-pagination">
                 <ul class="pagination">

@@ -60,7 +60,7 @@ class LoginForm(forms.Form):
         ))
 
 
-class ContactForm(forms.Form):
+class ContactForm(forms.Form):  
     name = forms.CharField(max_length=50)
     email = forms.EmailField(
         widget=forms.EmailInput(

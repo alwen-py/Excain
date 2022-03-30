@@ -25,7 +25,7 @@ def change_password(request):
 
 def contact_view(request):
     contactform = ContactForm()
-    context = {'contactform': contactform}
+    context = {'contactus': contactform}
     return render(request, 'contact-us.html', context)
 
 def login_view(request):

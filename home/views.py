@@ -35,8 +35,12 @@ def singlecourse(request):
 
 
 
-def singlecourse(request):
-    program = {'program': Program.description}
+def coursedetail(request,id):
+    print(request.GET.get('id'))
+    id=id
     
-    return render(request, 'single-course.html', program)
+    # course_id=CourseDetail.objects.get(id=c_id)
+    # program = {'program': Program.description()}
+    
+    return render(request, 'single-course.html')
 
