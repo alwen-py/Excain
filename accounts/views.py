@@ -1,3 +1,4 @@
+from unicodedata import name
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from .forms import SignUpForm, LoginForm, ContactForm
@@ -5,6 +6,8 @@ from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.forms import *
 from django.contrib import messages
 from accounts import forms
+from django.http import HttpResponse, HttpResponseRedirect
+
 
 def change_password(request):
     if request.method == 'POST':
@@ -24,8 +27,25 @@ def change_password(request):
     })
 
 def contact_view(request):
-    contactform = ContactForm()
+    print("first loop")
     context = {'contactus': contactform}
+    if request.method == 'POST':
+        contactform = ContactForm(request.POST)
+        if contactform.is_valid():
+            name = contactform.cleaned_data['name']
+            email = contactform.cleaned_data['email']
+            phone_number = contactform.cleaned_data['phone_number']
+            subject = contactform.cleaned_data['subject']
+            message = contactform.cleaned_data['message']
+            messages.success(request, 'Login Successful.')
+            return redirect("/")
+        else:
+            contactform = ContactForm(request.POST)
+        
+            contactform = ContactForm()
+            print("first if")
+        
+        
     return render(request, 'contact-us.html', context)
 
 def login_view(request):

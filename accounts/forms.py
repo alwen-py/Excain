@@ -1,6 +1,8 @@
+from unittest.util import _MAX_LENGTH
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+                                                                
 class SignUpForm(UserCreationForm):
     username = forms.CharField(
         widget=forms.TextInput(
@@ -61,7 +63,8 @@ class LoginForm(forms.Form):
 
 
 class ContactForm(forms.Form):  
-    name = forms.CharField(max_length=50)
+    name = forms.CharField( 
+                    widget=forms.TextInput(attrs={'placeholder': 'Name'}))
     email = forms.EmailField(
         widget=forms.EmailInput(
             attrs={
@@ -71,5 +74,7 @@ class ContactForm(forms.Form):
         ))
     phone_number = forms.RegexField(regex=r'^\+?1?\d{9,15}$'
                                     )
-    subject = forms.CharField(widget=forms.Textarea, max_length=2000)
-    message = forms.CharField(widget=forms.Textarea, max_length=2000)
+    subject = forms.CharField(widget=forms.Textarea(attrs={"placeholder": "Subject",
+                "class": "form-control"}), max_length=20)
+    message = forms.CharField(widget=forms.Textarea(attrs={"placeholder": "Message",
+                "class": "form-control"}), max_length=2000)
