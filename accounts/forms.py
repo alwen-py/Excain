@@ -78,3 +78,6 @@ class ContactForm(forms.Form):
                 "class": "form-control"}), max_length=20)
     message = forms.CharField(widget=forms.Textarea(attrs={"placeholder": "Message",
                 "class": "form-control"}), max_length=2000)
+    class Meta:
+        model = User
+        fields = ('name', 'email','phone_number', 'subject', 'message')

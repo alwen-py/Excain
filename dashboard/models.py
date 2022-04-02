@@ -1,3 +1,4 @@
+from email import message
 from django.db import models
 from djrichtextfield.models import RichTextField
 # Create your models here.
@@ -21,6 +22,7 @@ class State(models.Model):
 
     def __str__(self):
         return self.name
+
 
 
 class District(models.Model):
@@ -57,6 +59,20 @@ class CourseDetail(models.Model):
 
     def __str__(self):
         return self.name
+    
+
+class Contact(models.Model):
+    name = models.CharField(max_length=30)
+    phone_number = models.CharField(max_length=20)
+    email = models.EmailField()
+    subject= models.CharField(max_length=30)
+    message= models.CharField(max_length=200)
+    
+    
+
+    def __str__(self):
+        return self.name
+
 
 
 class Location(models.Model):

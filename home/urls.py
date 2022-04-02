@@ -3,11 +3,13 @@ from home.views import *
 from django.conf.urls import url
 
 
+
 urlpatterns = [
     path('',index,name='home'),
     path('gallery',gallery,name='gallery'),
-    path('contact-us',contactus,name='contactus'),
+    # path('contact-us',contactus,name='contact-us'),
     path('aboutus',aboutus,name='aboutus') ,
     path('courses/',courses,name='courses'), 
-    path('course-detail/<int:id>',coursedetail)
+    path('course-detail/<int:id>',coursedetail),
+
 ]

@@ -57,6 +57,12 @@ class ProgramAdmin(admin.ModelAdmin):
     ordering = ('-created_at',)
     list_filter = ('name', 'created_at')
 
+class ContactAdmin(admin.ModelAdmin):
+    list_display = ('name', 'email', 'phone_number', 'subject', 'message')
+    search_fields = ['name', 'email']
+    ordering = ('phone_number',)
+    list_filter = ('name', 'phone_number')
+
 
 admin.site.register(Country, CountryAdmin)
 admin.site.register(State, StateAdmin)
@@ -66,3 +72,4 @@ admin.site.register(CourseProgram, CourseProgramAdmin)
 admin.site.register(CourseDetail, CourseDetailAdmin)
 admin.site.register(Location, LocationAdmin)
 admin.site.register(Program, ProgramAdmin)
+admin.site.register(Contact,ContactAdmin)
