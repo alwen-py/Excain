@@ -1,12 +1,11 @@
-from re import sub
-from unicodedata import name
+
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from .forms import SignUpForm, LoginForm, ContactForm
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.forms import *
 from django.contrib import messages
-from django.http import HttpResponse, HttpResponseRedirect
+from dashboard.models import Contact
 
 
 def change_password(request):
@@ -29,12 +28,18 @@ def change_password(request):
 def contact_view(request):
     print("1")
     if request.method == 'POST':
-        print("2")
+        print("2") 
         form = ContactForm(request.POST)        
-        if form.is_valid():
-            print("3")
-            form.save()
-            return render(request, 'contact-us.html')
+        print("3")
+        name=request.POST['name']
+        email=request.POST['email']
+        phone_number=request.POST['phone_number']
+        subject=request.POST['subject']
+        message=request.POST['message']
+        print(name)
+        contact=Contact(name=name,email=email,phone_number=phone_number,subject=subject,message=message)
+        return render(request, 'contact-us.html')    
+            
     form = ContactForm()
     context = {'contactus': form}
     return render(request, 'contact-us.html', context)

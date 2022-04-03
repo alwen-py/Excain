@@ -37,10 +37,14 @@ def singlecourse(request):
 
 def coursedetail(request,id):
     print(request.GET.get('id'))
-    id=id
+    course=Program.objects.filter(id=id).first
+    context={
+        'course':course
+        
+    }
     
     # course_id=CourseDetail.objects.get(id=c_id)
     # program = {'program': Program.description()}
     
-    return render(request, 'single-course.html')
+    return render(request, 'single-course.html',context)
 
