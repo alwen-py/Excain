@@ -11,12 +11,10 @@
         <div class="container">
             <div class="header-page-content desk-pad-right-30">
                 <div class="course-badge">-30%</div>
-                <h1>Mastering On Data Modeling</h1>description
+                <h1>{{course.name}}</h1>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Mastering...</li>
-                    </ol>
+                        <li class="breadcrumb-item"><a href="/">Home</a></li></ol>
                 </nav>
             </div>
         </div>
@@ -35,29 +33,34 @@
                             <div class="summery-inner">
                                 <div class="summery-list">
                                     <div class="summery-list-item">
-                                        <div class="summery-label"><i class="flaticon-equalizer"></i>Level</div>
-                                        <div class="summery-option">Beginner</div>
+                                        <div class="summery-label"><i class="flaticon-equalizer"></i>Created at</div>
+                                        <div class="summery-option">{{course.created_at}}</div>
                                     </div>
                                     <div class="summery-list-item">
-                                        <div class="summery-label"><i class="flaticon-instructor"></i>Instructor</div>
-                                        <div class="summery-option">Owen Christ</div>
+                                        <div class="summery-label"><i class="flaticon-instructor"></i>Start date</div>
+                                        <div class="summery-option">{{course.start_date}}</div>
                                     </div>
                                     <div class="summery-list-item">
-                                        <div class="summery-label"><i class="flaticon-online-learning-1"></i>Lessons
+                                        <div class="summery-label"><i class="flaticon-online-learning-1"></i>End date
                                         </div>
-                                        <div class="summery-option">10</div>
+                                        <div class="summery-option">{{course.end_date}}</div>
                                     </div>
                                     <div class="summery-list-item">
-                                        <div class="summery-label"><i class="flaticon-reading-book-1"></i>Enrolled</div>
-                                        <div class="summery-option">340 Student</div>
+                                        <div class="summery-label"><i class="flaticon-reading-book-1"></i>Price</div>
+                                        <div class="summery-option">{{course.price}}</div>
                                     </div>
                                     <div class="summery-list-item">
-                                        <div class="summery-label"><i class="flaticon-key"></i>Access</div>
-                                        <div class="summery-option">Lifetime</div>
+                                        <div class="summery-label"><i class="flaticon-key"></i>Duration</div>
+                                        <div class="summery-option">{{course.duration}} minutes</div>
                                     </div>
                                     <div class="summery-list-item">
-                                        <div class="summery-label"><i class="flaticon-globe"></i>Language</div>
-                                        <div class="summery-option">English</div>
+                                        <div class="summery-label"><i class="flaticon-globe"></i>Certificate Available</div>
+                                        <div class="summery-option">{% if course.certificates_available %}
+                                            YES
+                                        
+                                        {% else %}
+                                        NO
+                                        {% endif %}</div>
                                     </div>
                                 </div>
                                 <div class="summery-material-list">
@@ -106,18 +109,12 @@
                                     <h3>Course Description</h3>
 
                                     <a href=""></a>
-                                    
-                                    <p>
-                                    </p>
-                                    <h4>   
-                                            {{course.name}}
-
+                                    <h4>
+                                        {{course.name}}
                                     </h4>
-                                  
                                     <ul>
-                                        <li><i class="flaticon-check"></i> {{ course.description }}</li>
-                                        <li><i class="flaticon-check"></i> At vero eos et accusamus et iusto odio
-                                            dignissimos ducimus</li>
+                                        <li><i class="flaticon-check"></i>Course Detail-<br> {{ course.course_detail }}</li>
+                                        <li><i class="flaticon-check"></i>{{course.description}}</li>
                                         <li><i class="flaticon-check"></i> Itaque earum rerum hic tenetur a sapiente
                                             delectus</li>
                                     </ul>

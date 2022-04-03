@@ -38,7 +38,8 @@ def contact_view(request):
         message=request.POST['message']
         print(name)
         contact=Contact(name=name,email=email,phone_number=phone_number,subject=subject,message=message)
-        return render(request, 'contact-us.html')    
+        form = ContactForm()
+        return render(request, 'contact-us.html',{'contactus': form})    
             
     form = ContactForm()
     context = {'contactus': form}
