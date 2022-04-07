@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate,login
-from .forms import DashBoardLoginForm 
+from .forms import DashBoardLoginForm
 from django.contrib import messages
 from django.contrib.auth import *
 from django.contrib.auth.forms import *
@@ -61,6 +61,4 @@ def change_password(request):
             messages.error(request, 'Please correct the error below.')
     else:
         form = PasswordChangeForm(request.user)
-    return render(request, 'dashboard/admin/change_password.html', {
-        'form': form
-    })   
+    return render(request, 'dashboard/admin/change_password.html', {'form': form})

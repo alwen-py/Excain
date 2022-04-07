@@ -4,6 +4,11 @@
 {% load static %}
 {% block stylesheets %}{% endblock stylesheets %}
 {% block content %}
+<style>
+.parsley-errors-list li {
+    color: red;
+}
+</style>
 <header class="header-page" style="margin-top: 95px;">
     <div class="header-page-shape header-page-shape-middle">
         <img src="{% static 'images/shapes/shape-18.png' %}" alt="shape">
@@ -22,7 +27,8 @@
                     <h3 class="sub-section-title-heading">Leave A Message</h3>
                     <p>Your email address will not be published. Required fields are marked *</p>
                 </div>
-                <form class="contact-form" id="contactForm">
+                <form method="POST"  class="contact-form" id="demo-form"  data-parsley-validate=""  >
+                    {% csrf_token %}
                     <div class="row">
                         <div class="col-12 col-md-6 col-lg-6">
                             <div class="form-group mb-20">
@@ -30,7 +36,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="flaticon-user"></i></span>
                                     </div>
-                                    <input type="text" name="name" id="name" class="form-control" placeholder="Name*"
+                                    <input data-parsley-maxlength="20" type="text" name="name" id="name" class="form-control" placeholder="Name*"
                                         required data-error="Please enter your name" />
                                 </div>
                                 <div class="help-block with-errors"></div>
@@ -42,8 +48,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="flaticon-envelope"></i></span>
                                     </div>
-                                    <input type="text" name="email" id="email" class="form-control" placeholder="Email*"
-                                        required data-error="Please enter your email" />
+                                      <input type="email" class="form-control" name="email" data-parsley-trigger="change" placeholder="email*" required="">
                                 </div>
                                 <div class="help-block with-errors"></div>
                             </div>
@@ -54,7 +59,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="flaticon-phone-call"></i></span>
                                     </div>
-                                    <input type="text" name="phone" id="phone" class="form-control" placeholder="Phone*"
+                                    <input data-parsley-type="digits" data-parsley-minlength="10"  data-parsley-maxlength="10"  data-parsley-trigger="keyup" type="text" name="phone" id="phone" class="form-control" placeholder="Phone*"
                                         required data-error="Please enter your phone number" />
                                 </div>
                                 <div class="help-block with-errors"></div>
@@ -113,19 +118,19 @@
                             <div class="contact-option-item">
                                 <div class="contact-option-icon"><i class="flaticon-phone-call"></i></div>
                                 <div class="contact-option-details">
-                                    <p>Mobile: <a href="tel:001-800-388-80-90">800 388 80 90</a></p>
-                                    <p>Hotline: <a href="tel:001-1800-1102">1800 1102</a></p>
-                                    <p>Email: <a
-                                            href="https://templates.hibootstrap.com/cdn-cgi/l/email-protection#4c24292020230c26293425622f2321"><span
-                                                class="__cf_email__"
-                                                data-cfemail="b8d0ddd4d4d7f8d2ddc0d196dbd7d5">[email&#160;protected]</span></a>
-                                    </p>
+                                    <p><a href="tel:+91 8299864862">+91 8299864862</a></p>
+                                </div>
+                            </div>
+                            <div class="contact-option-item">
+                                <div class="contact-option-icon"><i class="flaticon-envelope"></i></div>
+                                <div class="contact-option-details">
+                                    <p><a href="mailto:contact@excain.com">contact@excain.com</a></p>
                                 </div>
                             </div>
                             <div class="contact-option-item">
                                 <div class="contact-option-icon"><i class="flaticon-network"></i></div>
                                 <div class="contact-option-details">
-                                    <p>The Queen's Walk, PO Box 567 Hostin st. 433, Los Angeles California, US.</p>
+                                    <p>B1/90 Sector - J , Aliganj Lucknow, Uttar Pradesh - 226024.</p>
                                 </div>
                             </div>
                             <div class="contact-option-item">
@@ -149,11 +154,9 @@
         </div>
     </section>
 
-<div class="map-section">
-        <div class="map-iframe">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6509916.957423575!2d-123.79759793610344!3d37.18430344877116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb9fe5f285e3d%3A0x8b5109a227086f55!2sCalifornia%2C%20USA!5e0!3m2!1sen!2sbd!4v1607552912782!5m2!1sen!2sbd"></iframe>
-        </div>
+    <div class="map-section">
+      <div class="map-iframe">
+         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56936.970000825444!2d80.94804256402381!3d26.88569728350142!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399957faefbc9e81%3A0x8b01409b599f352d!2sExcain%20LLP!5e0!3m2!1sen!2sin!4v1649268400571!5m2!1sen!2sin" width="600" height="450" style="border:2;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 
 <section class="become-section section-minus-margin-top pb-100">
@@ -196,7 +199,11 @@
                 </div>
             </div>
     </section>
+  </div>
 
 {% endblock content %}
+
 {% block javascripts %}
+
 {% endblock javascripts %}
+

@@ -58,7 +58,15 @@ class ProgramAdmin(admin.ModelAdmin):
     list_filter = ('name', 'created_at')
 
 
+class ReachoutsAdmin(admin.ModelAdmin):
+  list_display = ('name', 'phone', 'email', 'subject')
+  search_fields = ['name', 'created_at']
+  ordering = ('-created_at',)
+  list_filter = ('name', 'created_at')
+
+
 admin.site.register(Country, CountryAdmin)
+admin.site.register(Reachouts,ReachoutsAdmin)
 admin.site.register(State, StateAdmin)
 admin.site.register(District, DistrictAdmin)
 admin.site.register(Currency, CurrencyAdmin)

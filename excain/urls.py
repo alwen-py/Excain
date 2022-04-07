@@ -7,5 +7,4 @@ urlpatterns = [
     # path('admin/',include('dashboard.urls')),
     path("", include("accounts.urls")),
     path('djrichtextfield/', include('djrichtextfield.urls'))
-
 ]

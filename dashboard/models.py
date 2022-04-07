@@ -89,3 +89,15 @@ class Program(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Reachouts(models.Model):
+  name = models.CharField(max_length=255, null=True, blank=True)
+  email = models.CharField(max_length=255, null=True, blank=True)
+  phone = models.CharField(max_length=255, null=True, blank=True)
+  subject = models.CharField(max_length=255, null=True, blank=True)
+  message = models.CharField(max_length=255, null=True, blank=True)
+  created_at = models.DateTimeField(default=now, null=False, blank=False)
+
+  def __str__(self):
+    return self.name
