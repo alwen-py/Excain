@@ -76,6 +76,7 @@ class Program(models.Model):
     name = models.CharField(max_length=255, null=True, blank=True)
     course_detail = models.ForeignKey(CourseDetail, null=False, blank=False, on_delete=models.CASCADE)
     description = RichTextField()
+    image = models.ImageField(blank=True, upload_to='program')
     created_at = models.DateTimeField(default=now, null=False, blank=False)
     start_date = models.DateTimeField(null=False, blank=False)
     end_date = models.DateTimeField(null=False, blank=False)

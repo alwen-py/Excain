@@ -144,6 +144,9 @@ STATICFILES_DIRS = (
     # os.path.join(CORE_DIR, 'excain/static/admin'),
 )
 
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / 'media'
+
 LOGOUT_REDIRECT_URL = '/'
 ADMIN_LOGIN_URL = "/admin/login/"
 ADMIN_LOGIN_REDIRECT_URL = '/admin/'
