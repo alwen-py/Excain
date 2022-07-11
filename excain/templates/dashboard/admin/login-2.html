@@ -1,0 +1,46 @@
+{% extends 'dashboard/admin/bases/base.html' %}
+{% load static %}
+{% block title %}Login{% endblock title %}
+{% block content %}
+</br></br>
+<main class="login-page login-2">
+  <div id="app" class="login-wrapper">
+    <div class="login-box">
+        {% include 'dashboard/admin/bases/messages.html' %}
+        <div class="logo-main">
+            <a href="/"><img src="{% static '/images/excain-logo.png' %}" alt="excain Logo"></a>
+        </div>
+        <form action="/admin/login/" id="loginForm" method="POST">
+            {% csrf_token %}
+            <div class="form-group mb-20">
+                <div class="input-group">
+                    {{ form.username }}
+                </div>
+            </div><br>
+            <div class="form-group mb-20">
+                <div class="input-group">
+                    {{ form.password }}
+                </div>
+                <span style="color:red; !important"
+                    class="text-error">{{ form.password.errors }}</span>
+            </div>
+            <div class="other-actions row">
+                <div class="col-6">
+                    <div class="checkbox">
+                        <label class="c-input c-checkbox">
+                            <input type="checkbox" name="remember">
+                            <span class="c-indicator"></span>
+                            Remember Me
+                        </label>
+                    </div>
+                </div>
+                <div class="col-6 text-right">
+                    <a href="../forgot-password.html" class="forgot-link">Forgot Password?</a>
+                </div>
+            </div>
+            <button class="btn btn-theme btn-full" type="submit">Login</button>
+        </form>
+    </div>
+</div>
+</main>
+{% endblock content %}

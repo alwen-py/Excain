@@ -3,167 +3,155 @@
 {% comment %} {% block stylesheets %}{% endblock stylesheets %} {% endcomment %}
 {% include 'home/sheets.html' %}
 {% block content %}
-<main>
-    <div class="preloader bg-blue">
-        <div class="preloader-wrapper">
-            <div class="loader-content book">
-                <figure class="page"></figure>
-                <figure class="page"></figure>
-                <figure class="page"></figure>
-            </div>
-            <h3>Loading</h3>
+<header class="header-page" style="margin-top: 95px;">
+    <div class="header-page-shape header-page-shape-middle">
+        <img src="../../excain/static/images/shapes/shape-22.png" alt="shape">
+    </div>
+    <div class="container">
+        <div class="header-page-content">
+            <h1>Register</h1>
         </div>
     </div>
-   <header class="header-page">
-        <div class="header-page-shape header-page-shape-middle">
-            <img src="../../excain/static/images/shapes/shape-22.png" alt="shape">
-        </div>
-        <div class="container">
-            <div class="header-page-content">
-                <h1>Login</h1>
-            </div>
-        </div>
-    </header>
-    <div class="authentication-section pt-100 pb-70">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-12 col-md-6 pb-30">
-                    <div class="authentication-item">
-                        <h3>Register</h3>
-                        <div class="authentication-form">
-                            <form method="POST" action="/register/">
-                                {% csrf_token %}
-                                <div class="form-group mb-20">
-                                    <div class="input-group">
-                                        {{ form.username }}
-                                    </div>
+</header>
+
+<div class="authentication-section pt-100 pb-70">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6 pb-30">
+                <div class="authentication-item">
+                    <h3>Register</h3>
+                    <div class="authentication-form">
+                        <form method="POST" action="/register/">
+                            {% csrf_token %}
+                            <div class="form-group mb-20">
+                                <div class="input-group">
+                                    {{ form.username }}
                                 </div>
-                                <span style="color:red; !important" class="text-error"
-                                    class="text-error">{{ form.username.errors }}</span>
-                                <div class="form-group mb-20">
-                                    <div class="input-group">
-                                        {{ form.email }}
-                                    </div>
+                            </div>
+                            <span style="color:red; !important" class="text-error"
+                                class="text-error">{{ form.username.errors }}</span>
+                            <div class="form-group mb-20">
+                                <div class="input-group">
+                                    {{ form.email }}
                                 </div>
-                                <span style="color:red; !important" class="text-error">{{ form.email.errors }}</span>
+                            </div>
+                            <span style="color:red; !important" class="text-error">{{ form.email.errors }}</span>
+                            <div class="form-group mb-20">
+                                <div class="input-group">
+                                    {{ form.password1 }}
+                                </div>
+                                <span style="color:red; !important"
+                                    class="text-error">{{ form.password1.errors }}</span>
+                                </br>
                                 <div class="form-group mb-20">
                                     <div class="input-group">
-                                        {{ form.password1 }}
+                                        {{ form.password2 }}
                                     </div>
                                     <span style="color:red; !important"
-                                        class="text-error">{{ form.password1.errors }}</span>
-                                    </br>
-                                    <div class="form-group mb-20">
-                                        <div class="input-group">
-                                            {{ form.password2 }}
-                                        </div>
-                                        <span style="color:red; !important"
-                                            class="text-error">{{ form.password2.errors }}</span>
-                                        <p class="font-italic mb-20 form-desc">The password must be at least twelve
-                                            characters
-                                            long, contain upper and lower case letters, contain numbers, contain symbols
-                                            like !
-                                            " ? $ % ^ & ).</p>
-                                        <button class="btn main-btn full-width mb-20" name="register"
-                                            type="submit">REGISTER NOW</button>
+                                        class="text-error">{{ form.password2.errors }}</span>
+                                    <p class="font-italic mb-20 form-desc">The password must be at least twelve
+                                        characters
+                                        long, contain upper and lower case letters, contain numbers, contain symbols
+                                        like !
+                                        " ? $ % ^ & ).</p>
+                                    <button class="btn main-btn full-width mb-20" name="register" type="submit">REGISTER
+                                        NOW</button>
 
-                                        <div class="authentication-account-access">
-                                            <div class="authentication-account-access-item">
-                                                <div class="input-checkbox">
-                                                    <input type="checkbox" id="check2">
-                                                    <label for="check2">I agree to the <a
-                                                            href="privacy-policy-2.html">Privacy
-                                                            Policy</a> & <a href="terms-service.html">Terms of
-                                                            Service</a></label>
-                                                </div>
+                                    <div class="authentication-account-access">
+                                        <div class="authentication-account-access-item">
+                                            <div class="input-checkbox">
+                                                <input type="checkbox" id="check2">
+                                                <label for="check2">I agree to the <a
+                                                        href="privacy-policy-2.html">Privacy
+                                                        Policy</a> & <a href="terms-service.html">Terms of
+                                                        Service</a></label>
                                             </div>
                                         </div>
-                            </form>
-                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-
-    <section class="partner-section pb-100">
-        <div class="container">
-            <div class="section-title">
-                <h2>They're Our <span>Patronize</span></h2>
+<section class="partner-section pb-100">
+    <div class="container">
+        <div class="section-title">
+            <h2>They're Our <span>Patronize</span></h2>
+        </div>
+        <div class="partner-carousel swiper-container">
+            <div class="swiper-wrapper">
+                <div class="partner-item swiper-slide">
+                    <a href="#"><img src="../../excain/static/images/partners/partner-1.png" alt="partner"></a>
+                </div>
+                <div class="partner-item swiper-slide">
+                    <a href="#"><img src="../../excain/static/images/partners/partner-2.png" alt="partner"></a>
+                </div>
+                <div class="partner-item swiper-slide">
+                    <a href="#"><img src="../../excain/static/images/partners/partner-3.png" alt="partner"></a>
+                </div>
+                <div class="partner-item swiper-slide">
+                    <a href="#"><img src="../../excain/static/images/partners/partner-4.png" alt="partner"></a>
+                </div>
+                <div class="partner-item swiper-slide">
+                    <a href="#"><img src="../../excain/static/images/partners/partner-5.png" alt="partner"></a>
+                </div>
+                <div class="partner-item swiper-slide">
+                    <a href="#"><img src="../../excain/static/images/partners/partner-6.png" alt="partner"></a>
+                </div>
+                <div class="partner-item swiper-slide">
+                    <a href="#"><img src="../../excain/static/images/partners/partner-7.png" alt="partner"></a>
+                </div>
             </div>
-            <div class="partner-carousel swiper-container">
-                <div class="swiper-wrapper">
-                    <div class="partner-item swiper-slide">
-                        <a href="#"><img src="../../excain/static/images/partners/partner-1.png" alt="partner"></a>
+        </div>
+    </div>
+</section>
+
+<section class="become-section pb-100">
+    <div class="container">
+        <div class="bg-main become-section-box">
+            <div class="become-section-shapes">
+                <div class="become-section-shape-item">
+                    <img src="../../excain/static/images/shapes/become-section-curve-line.png" alt="shape">
+                </div>
+            </div>
+            <div class="become-animate-items">
+                <div class="become-animate-item animation-tab-none">
+                    <img src="../../excain/static/images/shapes/animate-shape-2.png" alt="shape">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-lg-5 pb-50 mobile-pb-30">
+                    <div class="section-title section-title-white section-title-left">
+                        <h2>Join As Teacher Or Student</h2>
+                        <p>Minim veniam, quis nostrud exercitation ullamco laboris nisi ut henderit in
+                            magnam
+                            aliquam quaerat voluptatem</p>
                     </div>
-                    <div class="partner-item swiper-slide">
-                        <a href="#"><img src="../../excain/static/images/partners/partner-2.png" alt="partner"></a>
+                    <div class="section-button-group">
+                        <div class="section-button-item">
+                            <a href="become-a-teacher.html" class="btn main-btn btn-white">BECOME A
+                                TEACHER <i class="flaticon-edit"></i></a>
+                        </div>
+                        <div class="section-button-item">
+                            <a href="become-a-teacher.html" class="btn main-btn btn-white">BECOME A
+                                STUDENT <i class="flaticon-edit"></i></a>
+                        </div>
                     </div>
-                    <div class="partner-item swiper-slide">
-                        <a href="#"><img src="../../excain/static/images/partners/partner-3.png" alt="partner"></a>
-                    </div>
-                    <div class="partner-item swiper-slide">
-                        <a href="#"><img src="../../excain/static/images/partners/partner-4.png" alt="partner"></a>
-                    </div>
-                    <div class="partner-item swiper-slide">
-                        <a href="#"><img src="../../excain/static/images/partners/partner-5.png" alt="partner"></a>
-                    </div>
-                    <div class="partner-item swiper-slide">
-                        <a href="#"><img src="../../excain/static/images/partners/partner-6.png" alt="partner"></a>
-                    </div>
-                    <div class="partner-item swiper-slide">
-                        <a href="#"><img src="../../excain/static/images/partners/partner-7.png" alt="partner"></a>
+                </div>
+                <div class="col-12 col-lg-6 offset-lg-1 position-relative">
+                    <div class="image-position image-position-rb text-center">
+                        <img src="../../excain/static/images/header-screenshot.png" alt="screenshot">
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+{% endblock content %}
 
-
-    <section class="become-section pb-100">
-        <div class="container">
-            <div class="bg-main become-section-box">
-                <div class="become-section-shapes">
-                    <div class="become-section-shape-item">
-                        <img src="../../excain/static/images/shapes/become-section-curve-line.png" alt="shape">
-                    </div>
-                </div>
-                <div class="become-animate-items">
-                    <div class="become-animate-item animation-tab-none">
-                        <img src="../../excain/static/images/shapes/animate-shape-2.png" alt="shape">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12 col-lg-5 pb-50 mobile-pb-30">
-                        <div class="section-title section-title-white section-title-left">
-                            <h2>Join As Teacher Or Student</h2>
-                            <p>Minim veniam, quis nostrud exercitation ullamco laboris nisi ut henderit in
-                                magnam
-                                aliquam quaerat voluptatem</p>
-                        </div>
-                        <div class="section-button-group">
-                            <div class="section-button-item">
-                                <a href="become-a-teacher.html" class="btn main-btn btn-white">BECOME A
-                                    TEACHER <i class="flaticon-edit"></i></a>
-                            </div>
-                            <div class="section-button-item">
-                                <a href="become-a-teacher.html" class="btn main-btn btn-white">BECOME A
-                                    STUDENT <i class="flaticon-edit"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-lg-6 offset-lg-1 position-relative">
-                        <div class="image-position image-position-rb text-center">
-                            <img src="../../excain/static/images/header-screenshot.png" alt="screenshot">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-{% include 'home/scripts.html' %}
-</main>
-
-    {% endblock content %}
-    {% block javascipts %}{% endblock javascipts %}
+{% block javascipts %}{% endblock javascipts %}

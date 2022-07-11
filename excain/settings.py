@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
 from pathlib import Path
+from django.contrib.messages import constants as messages
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +26,7 @@ SECRET_KEY = 'django-insecure-j@*0^$t=n&wg79q*i@3s)=g!5j()*sv_vm5u$k0c2=dd9u-4lg
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 CORE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -39,8 +40,19 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home',
+    'djrichtextfield',
+    'dashboard',
     'accounts'
+
 ]
+
+MESSAGE_TAGS = {
+        messages.DEBUG: 'alert-secondary',
+        messages.INFO: 'alert-info',
+        messages.SUCCESS: 'alert-success',
+        messages.WARNING: 'alert-warning',
+        messages.ERROR: 'alert-danger',
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -55,6 +67,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'excain.urls'
 
 TEMPLATE_DIR = os.path.join(CORE_DIR, "excain/templates")  # ROOT dir for templates
+SWEETIFY_SWEETALERT_LIBRARY = 'sweetalert2'
 
 
 TEMPLATES = [
@@ -70,7 +83,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
             ],
             'libraries' : {
-                'staticfiles': 'django.templatetags.static', 
+                'staticfiles': 'django.templatetags.static',
             }
         },
     },
@@ -80,7 +93,7 @@ WSGI_APPLICATION = 'excain.wsgi.application'
 
 
 # Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+# https://docs.djangoproject.co vm/en/3.2/ref/settings/#databases
 
 DATABASES = {
     'default': {
@@ -122,18 +135,40 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 # STATIC_ROOT = os.path.join(CORE_DIR, 'excain/staticfiles')
 STATIC_URL = 'excain/static/'
 STATICFILES_DIRS = (
     os.path.join(CORE_DIR, 'excain/static'),
+    # os.path.join(CORE_DIR, 'excain/static/admin'),
 )
 
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / 'media'
+
+LOGOUT_REDIRECT_URL = '/'
+ADMIN_LOGIN_URL = "/admin/login/"
+ADMIN_LOGIN_REDIRECT_URL = '/admin/'
 
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+DJRICHTEXTFIELD_CONFIG = {
+    'js': ['//cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js'],
+    'init_template': 'djrichtextfield/init/tinymce.js',
+    'settings': {  # CKEditor
+    'toolbar': [
+        {'items': ['Format', '-', 'Bold', 'Italic', '-',
+                   'RemoveFormat']},
+        {'items': ['Link', 'Unlink', 'Image', 'Table']},
+        {'items': ['Source']}
+    ],
+    'format_tags': 'p;h1;h2;h3',
+    'width': 700
+}
+}

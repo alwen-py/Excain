@@ -1,157 +1,146 @@
 {% extends "home/base.html" %}
-
 {% csrf_token %}
 {% load static %}
 {% block title %}Login{% endblock title %}
-{% comment %} {% block stylesheets %}{% endblock stylesheets %} {% endcomment %}
 {% include 'home/sheets.html' %}
 {% block content %}
 
-<main>
-
-     <header class="header-page">
-        <div class="header-page-shape header-page-shape-middle">
-            <img src="../../excain/static/images/shapes/shape-22.png" alt="shape">
+<header class="header-page" style="margin-top: 95px;">
+    <div class="header-page-shape header-page-shape-middle">
+        <img src="../../excain/static/images/shapes/shape-22.png" alt="shape">
+    </div>
+    <div class="container">
+        <div class="header-page-content">
+            <h1>Login</h1>
         </div>
-        <div class="container">
-            <div class="header-page-content">
-                <h1>Login</h1>
-            </div>
-        </div>
-    </header>
+    </div>
+</header>
 
-    </header>
-    <div class="authentication-section pt-100 pb-70">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-12 col-md-6 pb-30">
-                    <div class="authentication-item">
-                        <h3>Login</h3>
-                        <div class="authentication-form">
-                            <form method="POST" action="/">
-                                {% csrf_token %}
-                                <div class="form-group mb-20">
-                                    <div class="input-group">
-                                        {{ form.username }}
-                                    </div>
-                                </div><br>
-                                <span style="color:red; !important" class="text-error">{{ form.error }}</span>
-                                <div class="form-group mb-20">
-                                    <div class="input-group">
-                                        {{ form.password }}
-                                    </div>
-                                    <span style="color:red; !important"
-                                        class="text-error">{{ form.password.errors }}</span>
+<div class="authentication-section pt-100 pb-70">
+    <div class="container">
+        {% include 'home/messages.html' %}
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6 pb-30">
+                <div class="authentication-item">
+                    <h3>Login</h3>
+                    <div class="authentication-form">
+                        <form method="POST" action="/login/">
+                            {% csrf_token %}
+                            <div class="form-group mb-20">
+                                <div class="input-group">
+                                    {{ form.username }}
                                 </div>
-                                <div class="authentication-account-access mb-20">
-                                    <div class="authentication-account-access-item">
-                                        <div class="input-checkbox">
-                                            <input type="checkbox" id="check1">
-                                            <label for="check1">Remember Me!</label>
-                                        </div>
-                                    </div>
-                                    <div class="authentication-account-access-item">
-                                        <div class="authentication-link">
-                                            <a href="forget-password.html">Forget password?</a>
-                                        </div>
+                            </div><br>
+                            <span style="color:red; !important" class="text-error">{{ form.error }}</span>
+                            <div class="form-group mb-20">
+                                <div class="input-group">
+                                    {{ form.password }}
+                                </div>
+                                <span style="color:red; !important" class="text-error">{{ form.password.errors }}</span>
+                            </div>
+                            <div class="authentication-account-access mb-20">
+                                <div class="authentication-account-access-item">
+                                    <div class="input-checkbox">
+                                        <input type="checkbox" id="check1">
+                                        <label for="check1">Remember Me!</label>
                                     </div>
                                 </div>
-                                {% if form.errors %}
-                                {% for field in form %}
-                                {% for error in field.errors %}
-                                <p> {{ error }} </p>
-                                {% endfor %}
-                                {% endfor %}
-                                {% endif %}
-                                <button type="submit" class="btn main-btn full-width">LOGIN IN</button>
-                            </form>
-                        </div>
+                                <div class="authentication-account-access-item">
+                                    <div class="authentication-link">
+                                        <a href="forget-password.html">Forget password?</a>
+                                    </div>
+                                </div>
+                            </div>
+                            {% if form.errors %}
+                            {% for field in form %}
+                            {% for error in field.errors %}
+                            <p> {{ error }} </p>
+                            {% endfor %}
+                            {% endfor %}
+                            {% endif %}
+                            <button type="submit" class="btn main-btn full-width">LOGIN</button>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-
-    <section class="partner-section pb-100">
-        <div class="container">
-            <div class="section-title">
-                <h2>They're Our <span>Patronize</span></h2>
+<section class="partner-section pb-100">
+    <div class="container">
+        <div class="section-title">
+            <h2>They're Our <span>Patronize</span></h2>
+        </div>
+        <div class="partner-carousel swiper-container">
+            <div class="swiper-wrapper">
+                <div class="partner-item swiper-slide">
+                    <a href="#"><img src="{% static '/images/partners/partner-1.png' %}" alt="partner"></a>
+                </div>
+                <div class="partner-item swiper-slide">
+                    <a href="#"><img src="{% static '/images/partners/partner-2.png' %}" alt="partner"></a>
+                </div>
+                <div class="partner-item swiper-slide">
+                    <a href="#"><img src="{% static '/images/partners/partner-3.png' %}" alt="partner"></a>
+                </div>
+                <div class="partner-item swiper-slide">
+                    <a href="#"><img src="{% static '/images/partners/partner-4.png' %}" alt="partner"></a>
+                </div>
+                <div class="partner-item swiper-slide">
+                    <a href="#"><img src="{% static '/images/partners/partner-5.png' %}" alt="partner"></a>
+                </div>
+                <div class="partner-item swiper-slide">
+                    <a href="#"><img src="{% static '/images/partners/partner-6.png' %}" alt="partner"></a>
+                </div>
+                <div class="partner-item swiper-slide">
+                    <a href="#"><img src="{% static '/images/partners/partner-7.png' %}" alt="partner"></a>
+                </div>
             </div>
-            <div class="partner-carousel swiper-container">
-                <div class="swiper-wrapper">
-                    <div class="partner-item swiper-slide">
-                        <a href="#"><img src="{% static '/images/partners/partner-1.png' %}" alt="partner"></a>
+        </div>
+    </div>
+</section>
+
+<section class="become-section pb-100">
+    <div class="container">
+        <div class="bg-main become-section-box">
+            <div class="become-section-shapes">
+                <div class="become-section-shape-item">
+                    <img src="{% static '/images/shapes/become-section-curve-line.png' %}" alt="shape">
+                </div>
+            </div>
+            <div class="become-animate-items">
+                <div class="become-animate-item animation-tab-none">
+                    <img src="{% static '/images/shapes/animate-shape-2.png' %}" alt="shape">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-lg-5 pb-50 mobile-pb-30">
+                    <div class="section-title section-title-white section-title-left">
+                        <h2>Join As Teacher Or Student</h2>
+                        <p>Minim veniam, quis nostrud exercitation ullamco laboris nisi ut henderit in magnam
+                            aliquam quaerat voluptatem</p>
                     </div>
-                    <div class="partner-item swiper-slide">
-                        <a href="#"><img src="{% static '/images/partners/partner-2.png' %}" alt="partner"></a>
+                    <div class="section-button-group">
+                        <div class="section-button-item">
+                            <a href="become-a-teacher.html" class="btn main-btn btn-white">BECOME A TEACHER <i
+                                    class="flaticon-edit"></i></a>
+                        </div>
+                        <div class="section-button-item">
+                            <a href="become-a-teacher.html" class="btn main-btn btn-white">BECOME A STUDENT <i
+                                    class="flaticon-edit"></i></a>
+                        </div>
                     </div>
-                    <div class="partner-item swiper-slide">
-                        <a href="#"><img src="{% static '/images/partners/partner-3.png' %}" alt="partner"></a>
-                    </div>
-                    <div class="partner-item swiper-slide">
-                        <a href="#"><img src="{% static '/images/partners/partner-4.png' %}" alt="partner"></a>
-                    </div>
-                    <div class="partner-item swiper-slide">
-                        <a href="#"><img src="{% static '/images/partners/partner-5.png' %}" alt="partner"></a>
-                    </div>
-                    <div class="partner-item swiper-slide">
-                        <a href="#"><img src="{% static '/images/partners/partner-6.png' %}" alt="partner"></a>
-                    </div>
-                    <div class="partner-item swiper-slide">
-                        <a href="#"><img src="{% static '/images/partners/partner-7.png' %}" alt="partner"></a>
+                </div>
+                <div class="col-12 col-lg-6 offset-lg-1 position-relative">
+                    <div class="image-position image-position-rb text-center">
+                        <img src="{% static '/images/header-screenshot.png' %}" alt="screenshot">
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-
-    <section class="become-section pb-100">
-        <div class="container">
-            <div class="bg-main become-section-box">
-                <div class="become-section-shapes">
-                    <div class="become-section-shape-item">
-                        <img src="{% static '/images/shapes/become-section-curve-line.png' %}" alt="shape">
-                    </div>
-                </div>
-                <div class="become-animate-items">
-                    <div class="become-animate-item animation-tab-none">
-                        <img src="{% static '/images/shapes/animate-shape-2.png' %}" alt="shape">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12 col-lg-5 pb-50 mobile-pb-30">
-                        <div class="section-title section-title-white section-title-left">
-                            <h2>Join As Teacher Or Student</h2>
-                            <p>Minim veniam, quis nostrud exercitation ullamco laboris nisi ut henderit in magnam
-                                aliquam quaerat voluptatem</p>
-                        </div>
-                        <div class="section-button-group">
-                            <div class="section-button-item">
-                                <a href="become-a-teacher.html" class="btn main-btn btn-white">BECOME A TEACHER <i
-                                        class="flaticon-edit"></i></a>
-                            </div>
-                            <div class="section-button-item">
-                                <a href="become-a-teacher.html" class="btn main-btn btn-white">BECOME A STUDENT <i
-                                        class="flaticon-edit"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-lg-6 offset-lg-1 position-relative">
-                        <div class="image-position image-position-rb text-center">
-                            <img src="{% static '/images/header-screenshot.png' %}" alt="screenshot">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    {% include 'home/scripts.html' %}
-
-
-</main>
 {% endblock content %}
+
 {% block javascipts %}{% endblock javascipts %}

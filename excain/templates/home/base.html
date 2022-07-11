@@ -16,7 +16,6 @@
     <link rel="manifest" href="{% static '/img/favicon/site.webmanifest' %}">
     <link rel="mask-icon" href="{% static '/img/favicon/safari-pinned-tab.svg' %}" color="#ffffff">
     <title> Excain | {% block title %}{% endblock title %}</title>
-    <link rel="icon" href="{% static '/images/tab.png' %}" type="image/png" sizes="16x16">
     {% block stylesheets %}{% endblock stylesheets %}
     {% include 'home/style.html' %}
 </head>
@@ -25,6 +24,30 @@
 {% block content %}{% endblock content %}
 {% include 'home/footer.html' %}
 </body>
-{% block javascripts %}{% endblock javascripts %}
+{% block javascripts %}
+<script type="text/javascript">
+$(function () {
+  $('#demo-form').parsley().on('field:validated', function() {
+  successClass: "has-success",
+    errorClass: "has-error",
+    classHandler: function (el) {
+        return el.$element.closest(".form-group");
+    },
+    errorsContainer: function (el) {
+        return el.$element.closest(".form-group");
+    },
+    errorsWrapper: "<span class='help-block'></span>",
+    errorTemplate: "<span></span>"
+    var ok = $('.parsley-error').length === 0;
+    $('.bs-callout-info').toggleClass('hidden', !ok);
+    $('.bs-callout-warning').toggleClass('hidden', ok);
+  })
+  .on('form:submit', function() {
+    alert("ok")
+    return false; // Don't submit form for this demo
+  });
+});
+</script>
+{% endblock javascripts %}
 {% include 'home/scripts.html' %}
 </html>
